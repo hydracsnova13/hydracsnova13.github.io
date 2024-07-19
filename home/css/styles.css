@@ -1,14 +1,35 @@
+:root {
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --header-background: #333;
+    --header-text-color: #fff;
+    --btn-background: #007BFF;
+    --btn-text-color: #fff;
+}
+
+body.dark-mode {
+    --background-color: #333;
+    --text-color: #f4f4f4;
+    --header-background: #f4f4f4;
+    --header-text-color: #333;
+    --btn-background: #f4f4f4;
+    --btn-text-color: #333;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 header {
-    background-color: #333;
-    color: white;
+    background-color: var(--header-background);
+    color: var(--header-text-color);
     padding: 10px 0;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 header nav ul {
@@ -22,15 +43,27 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: white;
+    color: var(--header-text-color);
     text-decoration: none;
+    transition: color 0.3s;
+}
+
+header button {
+    background: none;
+    border: none;
+    color: var(--header-text-color);
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: auto;
+    transition: color 0.3s;
 }
 
 #hero {
     text-align: center;
     padding: 50px 0;
-    background: #333;
-    color: white;
+    background: var(--header-background);
+    color: var(--header-text-color);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 #hero img {
@@ -40,19 +73,21 @@ header nav ul li a {
 }
 
 #hero .btn {
-    background-color: #007BFF;
-    color: white;
+    background-color: var(--btn-background);
+    color: var(--btn-text-color);
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 section {
     padding: 20px;
     margin: 20px 0;
-    background-color: white;
+    background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 h2 {
@@ -70,10 +105,11 @@ ul li {
 }
 
 footer {
-    background-color: #333;
-    color: white;
+    background-color: var(--header-background);
+    color: var(--header-text-color);
     text-align: center;
     padding: 10px 0;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 footer ul {
@@ -87,8 +123,9 @@ footer ul li {
 }
 
 footer ul li a {
-    color: white;
+    color: var(--header-text-color);
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 footer p {
