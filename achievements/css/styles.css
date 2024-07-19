@@ -29,6 +29,9 @@ header {
     background-color: var(--header-background);
     color: var(--header-text-color);
     padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -48,14 +51,21 @@ header nav ul li a {
     transition: color 0.3s;
 }
 
-header button {
+.toggle-button {
     background: none;
     border: none;
-    color: var(--header-text-color);
     cursor: pointer;
-    font-size: 1rem;
-    margin-left: auto;
-    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+.toggle-button img {
+    width: 24px;
+    height: 24px;
 }
 
 #hero {
