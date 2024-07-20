@@ -14,7 +14,7 @@
 body.dark-mode {
     --background-color: #263238; /* Dark blue-gray background */
     --text-color: #CFD8DC; /* Light gray text */
-    --header-background: #1b8eb8; /* Lighter blue header */
+    --header-background: #1b5c95; /* Blue header */
     --header-text-color: #FFFFFF; /* White text for header */
     --btn-background: #00ACC1; /* Light blue button */
     --btn-text-color: #FFFFFF; /* White text for button */
@@ -25,7 +25,7 @@ body.dark-mode {
 }
 
 body {
-    font-family: 'Times New Roman', serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: var(--background-color);
@@ -41,13 +41,13 @@ header {
     justify-content: space-between;
     align-items: center;
     transition: background-color 0.3s, color 0.3s;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allow wrapping for responsive design */
 }
 
 #main-nav {
+    flex-grow: 1;
     display: flex;
     justify-content: center;
-    flex-grow: 1;
 }
 
 #nav-list {
@@ -70,11 +70,11 @@ header {
 #header-controls {
     display: flex;
     align-items: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap; /* Allow wrapping for responsive design */
 }
 
 #search-input, #search-button {
-    display: none;
+    display: none; /* Initially hidden */
     margin-right: 10px;
 }
 
@@ -134,7 +134,7 @@ header {
 }
 
 body.dark-mode .section {
-    background-color: #37474F;
+    background-color: #37474F; /* Dark gray background for sections in dark mode */
     color: var(--text-color);
 }
 
@@ -207,7 +207,7 @@ footer {
 }
 
 .footer-link {
-    color: var(--header-text-color);
+    color: var (--header-text-color);
     text-decoration: none;
     transition: color 0.3s;
 }
