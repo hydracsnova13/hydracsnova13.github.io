@@ -16,8 +16,11 @@
             </ul>
         </nav>
         <div id="header-controls">
-            <input type="text" id="search-input" placeholder="Search..." />
-            <button id="search-button">Search</button>
+            <button id="search-icon" class="toggle-button">
+                <img src="../icons/search.svg" alt="Search">
+            </button>
+            <input type="text" id="search-input" placeholder="Search..." class="hidden" />
+            <button id="search-button" class="hidden">Search</button>
             <button id="toggle-theme" class="toggle-button">
                 <img id="theme-icon" src="../icons/sun.svg" alt="Toggle Theme">
             </button>
@@ -65,6 +68,7 @@
         <p id="footer-location">Hyderabad, Telangana</p>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

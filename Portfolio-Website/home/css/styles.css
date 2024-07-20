@@ -203,3 +203,47 @@ footer {
 #footer-location {
     margin: 10px 0 0;
 }
+
+/* Styles for project cards */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.project-card {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    width: 300px;
+    transition: background-color 0.3s, color 0.3s;
+    text-align: center;
+}
+
+.project-card img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.project-card h3 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: var(--header-background);
+}
+
+.project-card p {
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.project-card a {
+    display: inline-block;
+    background-color: var(--btn-background);
+    color: var(--btn-text-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
