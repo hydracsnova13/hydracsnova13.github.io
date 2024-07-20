@@ -159,4 +159,3 @@ document.getElementById('search-input').addEventListener('keypress', (e) => {
         document.getElementById('search-button').click();
     }
 });
-
