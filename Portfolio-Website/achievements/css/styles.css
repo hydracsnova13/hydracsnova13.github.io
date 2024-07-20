@@ -5,6 +5,7 @@
     --header-text-color: #FFFFFF; /* White text for header */
     --btn-background: #4DB6AC; /* Teal button */
     --btn-text-color: #FFFFFF; /* White text for button */
+    --card-neon-light: rgba(255, 0, 0, 0.7); /* Reddish neon light for light mode */
 }
 
 body.dark-mode {
@@ -14,6 +15,7 @@ body.dark-mode {
     --header-text-color: #FFFFFF; /* White text for header */
     --btn-background: #00ACC1; /* Light blue button */
     --btn-text-color: #FFFFFF; /* White text for button */
+    --card-neon-light: rgba(0, 255, 0, 0.7); /* Green neon light for dark mode */
 }
 
 body {
@@ -224,7 +226,7 @@ footer {
 
 .project-card:hover, .project-card:active {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 25px var(--card-neon-light);
 }
 
 .project-card img {
@@ -266,6 +268,6 @@ footer {
 
     .project-card:active {
         transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 25px var(--card-neon-light);
     }
 }
