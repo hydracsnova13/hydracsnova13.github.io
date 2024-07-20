@@ -1,19 +1,19 @@
 :root {
-    --background-color: #0d0d0d;
-    --text-color: #ffffff;
-    --header-background: #ff00ff;
-    --header-text-color: #0d0d0d;
-    --btn-background: #00ffff;
-    --btn-text-color: #0d0d0d;
+    --background-color: #0d0d0d; /* Dark background */
+    --text-color: #ffffff; /* White text */
+    --header-background: #E91E63; /* Pink header */
+    --header-text-color: #0d0d0d; /* Dark text for header */
+    --btn-background: #57DCBE; /* Teal button */
+    --btn-text-color: #0d0d0d; /* Dark text for button */
 }
 
 body.dark-mode {
-    --background-color: #1a1a1a;
-    --text-color: #00ff00;
-    --header-background: #00ffff;
-    --header-text-color: #0d0d0d;
-    --btn-background: #ff00ff;
-    --btn-text-color: #0d0d0d;
+    --background-color: #1a1a1a; /* Almost black background */
+    --text-color: #57DCBE; /* Teal text */
+    --header-background: #272780; /* Navy blue header */
+    --header-text-color: #ffffff; /* White text for header */
+    --btn-background: #E91E63; /* Pink button */
+    --btn-text-color: #0d0d0d; /* Dark text for button */
 }
 
 body {
