@@ -7,77 +7,79 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="../home/">Home</a></li>
-                <li><a href="../achievements/">Achievements</a></li>
-                <li><a href="https://subspace.hashnode.dev/" target="_blank">Blog</a></li>
+    <header id="site-header">
+        <nav id="main-nav">
+            <ul id="nav-list">
+                <li class="nav-item"><a href="../home/" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../achievements/" class="nav-link">Achievements</a></li>
+                <li class="nav-item"><a href="https://subspace.hashnode.dev/" target="_blank" class="nav-link">Blog</a></li>
             </ul>
         </nav>
         <button id="toggle-theme" class="toggle-button">
             <img id="theme-icon" src="../icons/sun.svg" alt="Toggle Theme">
         </button>
-    </header>    
+    </header>
     
-    <section id="hero">
-        <img src="../images/profile.jpg" alt="Debanjan Chakraborty">
-        <h1>Debanjan Chakraborty</h1>
-        <p>Software Engineering Intern</p>
-        <a href="mailto:hydracsnova@gmail.com" class="btn">Contact Me</a>
-    </section>
+    <main class="container">
+        <section id="hero-section" class="section">
+            <img id="profile-picture" src="../images/profile.jpg" alt="Debanjan Chakraborty">
+            <h1 id="main-heading">Debanjan Chakraborty</h1>
+            <p id="sub-heading">Software Engineering Intern</p>
+            <a href="mailto:hydracsnova@gmail.com" id="contact-button" class="btn">Contact Me</a>
+        </section>
+        
+        <section id="about-section" class="section">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-content">I am a Software Engineering Intern with a passion for innovative problem-solving and the ability to adapt and lead in dynamic environments...</p>
+        </section>
+        
+        <section id="skills-section" class="section">
+            <h2 class="section-title">Skills</h2>
+            <ul id="skills-list" class="list">
+                <li class="list-item">Problem-solving</li>
+                <li class="list-item">Resilience</li>
+                <li class="list-item">Negotiation Skills</li>
+                <li class="list-item">Adaptability</li>
+                <li class="list-item">Critical thinking</li>
+                <li class="list-item">Presentation Skills</li>
+                <li class="list-item">Time Management</li>
+                <li class="list-item">Leadership</li>
+                <li class="list-item">Communication Skills</li>
+                <li class="list-item">Git</li>
+                <li class="list-item">JavaScript</li>
+                <li class="list-item">CSS</li>
+                <li class="list-item">HTML</li>
+                <li class="list-item">MySQL</li>
+                <li class="list-item">Python</li>
+                <li class="list-item">Java</li>
+                <li class="list-item">C++</li>
+                <li class="list-item">C</li>
+            </ul>
+        </section>
+        
+        <section id="projects-section" class="section">
+            <h2 class="section-title">Projects</h2>
+            <div class="project">
+                <h3 class="project-title">Weather Prediction Using ML</h3>
+                <p class="project-description">Utilized LSTM, Random Forest, and XGBoost for accurate weather forecasting.</p>
+            </div>
+            <div class="project">
+                <h3 class="project-title">Object Detection with YOLO v7 and SWIN Transformers</h3>
+                <p class="project-description">Comparative analysis of object detection frameworks.</p>
+            </div>
+            <div class="project">
+                <h3 class="project-title">Sign Language Detection using YOLOv5</h3>
+                <p class="project-description">Developed a model for detecting sign language gestures.</p>
+            </div>
+        </section>
+    </main>
     
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am a Software Engineering Intern with a passion for innovative problem-solving and the ability to adapt and lead in dynamic environments...</p>
-    </section>
-    
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>Problem-solving</li>
-            <li>Resilience</li>
-            <li>Negotiation Skills</li>
-            <li>Adaptability</li>
-            <li>Critical thinking</li>
-            <li>Presentation Skills</li>
-            <li>Time Management</li>
-            <li>Leadership</li>
-            <li>Communication Skills</li>
-            <li>Git</li>
-            <li>JavaScript</li>
-            <li>CSS</li>
-            <li>HTML</li>
-            <li>MySQL</li>
-            <li>Python</li>
-            <li>Java</li>
-            <li>C++</li>
-            <li>C</li>
+    <footer id="site-footer">
+        <ul id="footer-links" class="list">
+            <li class="list-item"><a href="https://www.linkedin.com/in/debanjanchakraborty13" class="footer-link">LinkedIn</a></li>
+            <li class="list-item"><a href="mailto:hydracsnova@gmail.com" class="footer-link">Email</a></li>
         </ul>
-    </section>
-    
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Weather Prediction Using ML</h3>
-            <p>Utilized LSTM, Random Forest, and XGBoost for accurate weather forecasting.</p>
-        </div>
-        <div class="project">
-            <h3>Object Detection with YOLO v7 and SWIN Transformers</h3>
-            <p>Comparative analysis of object detection frameworks.</p>
-        </div>
-        <div class="project">
-            <h3>Sign Language Detection using YOLOv5</h3>
-            <p>Developed a model for detecting sign language gestures.</p>
-        </div>
-    </section>
-    
-    <footer>
-        <ul>
-            <li><a href="https://www.linkedin.com/in/debanjanchakraborty13">LinkedIn</a></li>
-            <li><a href="mailto:hydracsnova@gmail.com">Email</a></li>
-        </ul>
-        <p>Hyderabad, Telangana</p>
+        <p id="footer-location">Hyderabad, Telangana</p>
     </footer>
 
     <script src="js/script.js"></script>

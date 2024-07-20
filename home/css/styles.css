@@ -35,24 +35,24 @@ header {
     transition: background-color 0.3s, color 0.3s;
 }
 
-header nav {
+nav {
     flex-grow: 1;
     display: flex;
     justify-content: center;
 }
 
-header nav ul {
+#nav-list {
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
 }
 
-header nav ul li {
+.nav-item {
     margin: 0 15px;
 }
 
-header nav ul li a {
+.nav-link {
     color: var(--header-text-color);
     text-decoration: none;
     transition: color 0.3s;
@@ -74,30 +74,13 @@ header nav ul li a {
     height: 24px;
 }
 
-#hero {
-    text-align: center;
-    padding: 50px 0;
-    background: var(--header-background);
-    color: var(--header-text-color);
-    transition: background-color 0.3s, color 0.3s;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-#hero img {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-}
-
-#hero .btn {
-    background-color: var(--btn-background);
-    color: var(--btn-text-color);
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-section {
+.section {
     padding: 20px;
     margin: 20px 0;
     background-color: #222;
@@ -106,19 +89,55 @@ section {
     transition: background-color 0.3s, color 0.3s;
 }
 
-h2 {
+#hero-section {
+    text-align: center;
+    padding: 50px 0;
+    background: var(--header-background);
+    color: var(--header-text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#profile-picture {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+#contact-button {
+    background-color: var(--btn-background);
+    color: var(--btn-text-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.section-title {
     text-align: center;
     margin-bottom: 20px;
     color: var(--header-background);
 }
 
-ul {
+.list {
     list-style: none;
     padding: 0;
 }
 
-ul li {
+.list-item {
     margin: 5px 0;
+}
+
+.project {
+    margin-bottom: 20px;
+}
+
+.project-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.project-description {
+    margin: 0;
 }
 
 footer {
@@ -129,22 +148,17 @@ footer {
     transition: background-color 0.3s, color 0.3s;
 }
 
-footer ul {
+#footer-links {
     list-style: none;
     padding: 0;
 }
 
-footer ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-footer ul li a {
+.footer-link {
     color: var(--header-text-color);
     text-decoration: none;
     transition: color 0.3s;
 }
 
-footer p {
+#footer-location {
     margin: 10px 0 0;
 }
