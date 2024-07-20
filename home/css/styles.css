@@ -37,12 +37,13 @@ header {
 
 header nav {
     flex-grow: 1;
+    display: flex;
+    justify-content: center;
 }
 
 header nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
     margin: 0;
     padding: 0;
 }
