@@ -28,6 +28,17 @@ document.addEventListener('DOMContentLoaded', () => {
     applyTheme(savedTheme);
 });
 
+// Toggle search input visibility
+document.getElementById('search-icon').addEventListener('click', () => {
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
+    searchInput.classList.toggle('visible');
+    searchButton.classList.toggle('visible');
+    if (searchInput.classList.contains('visible')) {
+        searchInput.focus();
+    }
+});
+
 // Function to handle search and navigate to section
 document.getElementById('search-button').addEventListener('click', () => {
     const query = document.getElementById('search-input').value.toLowerCase();
@@ -38,4 +49,13 @@ document.getElementById('search-button').addEventListener('click', () => {
             section.scrollIntoView({ behavior: 'smooth' });
         }
     });
+    document.getElementById('search-input').classList.remove('visible');
+    document.getElementById('search-button').classList.remove('visible');
+});
+
+// Also trigger search on pressing Enter key
+document.getElementById('search-input').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        document.getElementById('search-button').click();
+    }
 });
