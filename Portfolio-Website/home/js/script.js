@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme') || 'light';
     applyTheme(savedTheme);
 
-    // Fetch and parse the CSV file
+    // Fetch and parse the CSV file for projects
     Papa.parse('../data/projects.csv', {
         download: true,
         header: true,
@@ -69,6 +69,37 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 projectsContainer.appendChild(card);
+            });
+        }
+    });
+
+    // Fetch and parse the CSV file for skills
+    Papa.parse('../data/skills.csv', {
+        download: true,
+        header: true,
+        complete: function(results) {
+            const skillsData = results.data;
+            const skillsContainer = document.getElementById('skills-container');
+
+            skillsData.forEach(skill => {
+                const skillRow = document.createElement('div');
+                skillRow.classList.add('skill-row');
+
+                const skillName = document.createElement('div');
+                skillName.classList.add('skill-name');
+                skillName.textContent = skill.name;
+
+                const skillBarContainer = document.createElement('div');
+                skillBarContainer.classList.add('skill-bar-container');
+
+                const skillBar = document.createElement('div');
+                skillBar.classList.add('skill-bar');
+                skillBar.style.width = `${skill.score}%`;
+
+                skillBarContainer.appendChild(skillBar);
+                skillRow.appendChild(skillName);
+                skillRow.appendChild(skillBarContainer);
+                skillsContainer.appendChild(skillRow);
             });
         }
     });

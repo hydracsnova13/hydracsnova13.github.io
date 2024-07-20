@@ -277,3 +277,49 @@ footer {
         box-shadow: 0 0 25px var(--card-neon-light);
     }
 }
+
+/* Styles for skills section */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.skill-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.skill-name {
+    width: 20%;
+    text-align: right;
+    padding-right: 10px;
+    color: var(--header-background);
+}
+
+.skill-bar-container {
+    width: 75%;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    height: 20px;
+}
+
+.skill-bar {
+    height: 100%;
+    background-color: var(--btn-background);
+    transition: width 0.3s;
+}
+
+body.dark-mode .skill-bar-container {
+    background-color: #555555;
+}
+
+body.dark-mode .skill-bar {
+    background-color: #00acc1;
+}
