@@ -5,6 +5,9 @@
     --header-text-color: #FFFFFF; /* White text for header */
     --btn-background: #4DB6AC; /* Teal button */
     --btn-text-color: #FFFFFF; /* White text for button */
+    --card-background: #FFF3E0; /* Light beige card background */
+    --card-title-color: #333333; /* Dark gray card title */
+    --card-text-color: #333333; /* Dark gray card text */
     --card-neon-light: rgba(255, 0, 0, 0.7); /* Reddish neon light for light mode */
 }
 
@@ -15,6 +18,9 @@ body.dark-mode {
     --header-text-color: #FFFFFF; /* White text for header */
     --btn-background: #00ACC1; /* Light blue button */
     --btn-text-color: #FFFFFF; /* White text for button */
+    --card-background: #000000; /* Black card background */
+    --card-title-color: #FFFFFF; /* White card title */
+    --card-text-color: #B0BEC5; /* Light gray card text */
     --card-neon-light: rgba(0, 255, 0, 0.7); /* Green neon light for dark mode */
 }
 
@@ -214,13 +220,13 @@ footer {
 }
 
 .project-card {
-    background-color: #ffffff;
+    background-color: var(--card-background);
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     margin: 20px;
     padding: 20px;
     width: 300px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
     text-align: center;
 }
 
@@ -237,12 +243,12 @@ footer {
 .project-card h3 {
     margin-top: 15px;
     margin-bottom: 10px;
-    color: var(--header-background);
+    color: var(--card-title-color);
 }
 
 .project-card p {
     margin-bottom: 15px;
-    color: var(--text-color);
+    color: var(--card-text-color);
 }
 
 .project-card a {
