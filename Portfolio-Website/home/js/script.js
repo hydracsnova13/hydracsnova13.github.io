@@ -27,3 +27,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme') || 'light';
     applyTheme(savedTheme);
 });
+
+// Function to handle search and navigate to section
+document.getElementById('search-button').addEventListener('click', () => {
+    const query = document.getElementById('search-input').value.toLowerCase();
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => {
+        const textContent = section.textContent.toLowerCase();
+        if (textContent.includes(query)) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});

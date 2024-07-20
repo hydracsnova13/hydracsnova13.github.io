@@ -35,7 +35,7 @@ header {
     transition: background-color 0.3s, color 0.3s;
 }
 
-nav {
+#main-nav {
     flex-grow: 1;
     display: flex;
     justify-content: center;
@@ -56,6 +56,32 @@ nav {
     color: var(--header-text-color);
     text-decoration: none;
     transition: color 0.3s;
+}
+
+#header-controls {
+    display: flex;
+    align-items: center;
+}
+
+#search-input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#search-button {
+    background-color: var(--btn-background);
+    color: var(--btn-text-color);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#search-button:hover {
+    background-color: var(--btn-background-hover);
 }
 
 .toggle-button {
