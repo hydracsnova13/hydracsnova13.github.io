@@ -276,6 +276,21 @@ footer {
         transform: translateY(-10px);
         box-shadow: 0 0 25px var(--card-neon-light);
     }
+
+    .skill-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .skill-name {
+        width: 100%;
+        text-align: left;
+        padding-bottom: 10px;
+    }
+
+    .skill-bar-container {
+        width: 100%;
+    }
 }
 
 /* Styles for skills section */
@@ -313,7 +328,8 @@ footer {
 .skill-bar {
     height: 100%;
     background-color: var(--btn-background);
-    transition: width 0.3s;
+    transition: width 2s;
+    width: 0;
 }
 
 body.dark-mode .skill-bar-container {

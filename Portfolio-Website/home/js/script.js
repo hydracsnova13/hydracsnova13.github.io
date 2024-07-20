@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             skillsData.forEach(skill => {
                 const skillRow = document.createElement('div');
                 skillRow.classList.add('skill-row');
+                skillRow.style.setProperty('--skill-level', `${skill.score}%`);
 
                 const skillName = document.createElement('div');
                 skillName.classList.add('skill-name');
@@ -94,12 +95,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const skillBar = document.createElement('div');
                 skillBar.classList.add('skill-bar');
-                skillBar.style.width = `${skill.score}%`;
 
                 skillBarContainer.appendChild(skillBar);
                 skillRow.appendChild(skillName);
                 skillRow.appendChild(skillBarContainer);
                 skillsContainer.appendChild(skillRow);
+
+                // Add event listeners for hover and tap
+                skillRow.addEventListener('mouseover', () => {
+                    skillBar.style.width = `${skill.score}%`;
+                });
+
+                skillRow.addEventListener('touchstart', () => {
+                    skillBar.style.width = `${skill.score}%`;
+                });
+            });
+
+            // Observer to animate skill bars when they appear in the center of the screen
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5
+            };
+
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const skillBar = entry.target.querySelector('.skill-bar');
+                        skillBar.style.width = entry.target.style.getPropertyValue('--skill-level');
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            document.querySelectorAll('.skill-row').forEach(skillRow => {
+                observer.observe(skillRow);
             });
         }
     });
