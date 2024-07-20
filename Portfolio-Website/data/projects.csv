@@ -2,3 +2,4 @@ image,title,description,link
 "../images/project1.jpg","Weather Prediction Using ML","Utilized LSTM, Random Forest, and XGBoost for accurate weather forecasting.","https://github.com/user/repo1"
 "../images/project2.jpg","Object Detection with YOLO v7","Comparative analysis of object detection frameworks.","https://github.com/user/repo2"
 "../images/project3.jpg","Sign Language Detection","Developed a model for detecting sign language gestures.","https://github.com/user/repo3"
+"../images/project4.jpg"
