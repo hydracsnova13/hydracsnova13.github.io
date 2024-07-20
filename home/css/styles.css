@@ -1,19 +1,19 @@
 :root {
-    --background-color: #f4f4f4;
-    --text-color: #333;
-    --header-background: #333;
-    --header-text-color: #fff;
-    --btn-background: #007BFF;
-    --btn-text-color: #fff;
+    --background-color: #fdfdfd;
+    --text-color: #444;
+    --header-background: #6c63ff;
+    --header-text-color: #ffffff;
+    --btn-background: #6c63ff;
+    --btn-text-color: #ffffff;
 }
 
 body.dark-mode {
-    --background-color: #333;
-    --text-color: #f4f4f4;
-    --header-background: #f4f4f4;
-    --header-text-color: #333;
-    --btn-background: #f4f4f4;
-    --btn-text-color: #333;
+    --background-color: #181818;
+    --text-color: #e0e0e0;
+    --header-background: #282828;
+    --header-text-color: #fdfdfd;
+    --btn-background: #3b3b3b;
+    --btn-text-color: #ffffff;
 }
 
 body {
