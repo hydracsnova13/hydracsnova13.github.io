@@ -1,23 +1,23 @@
 :root {
-    --background-color: #fdfdfd;
-    --text-color: #444;
-    --header-background: #6c63ff;
-    --header-text-color: #ffffff;
-    --btn-background: #6c63ff;
-    --btn-text-color: #ffffff;
+    --background-color: #0d0d0d;
+    --text-color: #ffffff;
+    --header-background: #ff00ff;
+    --header-text-color: #0d0d0d;
+    --btn-background: #00ffff;
+    --btn-text-color: #0d0d0d;
 }
 
 body.dark-mode {
-    --background-color: #181818;
-    --text-color: #e0e0e0;
-    --header-background: #282828;
-    --header-text-color: #fdfdfd;
-    --btn-background: #3b3b3b;
-    --btn-text-color: #ffffff;
+    --background-color: #1a1a1a;
+    --text-color: #00ff00;
+    --header-background: #00ffff;
+    --header-text-color: #0d0d0d;
+    --btn-background: #ff00ff;
+    --btn-text-color: #0d0d0d;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: var(--background-color);
@@ -100,15 +100,16 @@ header nav ul li a {
 section {
     padding: 20px;
     margin: 20px 0;
-    background-color: #fff;
+    background-color: #222;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
     transition: background-color 0.3s, color 0.3s;
 }
 
 h2 {
     text-align: center;
     margin-bottom: 20px;
+    color: var(--header-background);
 }
 
 ul {
