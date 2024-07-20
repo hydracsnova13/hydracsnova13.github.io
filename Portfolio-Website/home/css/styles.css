@@ -207,7 +207,7 @@ footer {
 }
 
 .footer-link {
-    color: var (--header-text-color);
+    color: var(--header-text-color);
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -274,6 +274,13 @@ footer {
     header {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    #header-controls {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 10px;
     }
 
     .project-card {
