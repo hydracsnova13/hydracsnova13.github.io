@@ -1,19 +1,19 @@
 :root {
-    --background-color: #0d0d0d; /* Dark background */
-    --text-color: #ffffff; /* White text */
-    --header-background: #E91E63; /* Pink header */
-    --header-text-color: #0d0d0d; /* Dark text for header */
-    --btn-background: #57DCBE; /* Teal button */
-    --btn-text-color: #0d0d0d; /* Dark text for button */
+    --background-color: #f0f0f0; /* Light background */
+    --text-color: #333333; /* Dark text */
+    --header-background: #0085FF; /* Blue header */
+    --header-text-color: #ffffff; /* White text for header */
+    --btn-background: #17CB49; /* Green button */
+    --btn-text-color: #ffffff; /* White text for button */
 }
 
 body.dark-mode {
     --background-color: #1a1a1a; /* Almost black background */
-    --text-color: #57DCBE; /* Teal text */
-    --header-background: #272780; /* Navy blue header */
-    --header-text-color: #ffffff; /* White text for header */
-    --btn-background: #E91E63; /* Pink button */
-    --btn-text-color: #0d0d0d; /* Dark text for button */
+    --text-color: #f0f0f0; /* Light text */
+    --header-background: #00BA34; /* Green header */
+    --header-text-color: #1a1a1a; /* Dark text for header */
+    --btn-background: #FF9F2D; /* Orange button */
+    --btn-text-color: #1a1a1a; /* Dark text for button */
 }
 
 body {
@@ -83,9 +83,9 @@ nav {
 .section {
     padding: 20px;
     margin: 20px 0;
-    background-color: #222;
+    background-color: #ffffff;
     border-radius: 5px;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, color 0.3s;
 }
 
