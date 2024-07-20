@@ -109,6 +109,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 skillRow.addEventListener('touchstart', () => {
                     skillBar.style.width = `${skill.score}%`;
                 });
+
+                skillRow.addEventListener('click', () => {
+                    skillBar.style.width = `${skill.score}%`;
+                });
             });
 
             // Observer to animate skill bars when they appear in the center of the screen
@@ -167,3 +171,4 @@ document.getElementById('search-input').addEventListener('keypress', (e) => {
         document.getElementById('search-button').click();
     }
 });
+

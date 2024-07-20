@@ -14,7 +14,7 @@
 body.dark-mode {
     --background-color: #263238; /* Dark blue-gray background */
     --text-color: #CFD8DC; /* Light gray text */
-    --header-background: #1b5c95; /* Blue header */
+    --header-background: #1b5c95; /* Lighter blue header */
     --header-text-color: #FFFFFF; /* White text for header */
     --btn-background: #00ACC1; /* Light blue button */
     --btn-text-color: #FFFFFF; /* White text for button */
@@ -25,7 +25,7 @@ body.dark-mode {
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Times New Roman', serif;
     margin: 0;
     padding: 0;
     background-color: var(--background-color);
@@ -165,6 +165,10 @@ body.dark-mode .section {
     text-align: center;
     margin-bottom: 20px;
     color: var(--header-background);
+}
+
+body.dark-mode .section-title {
+    color: #1b8eb8; /* Lighter blue for dark mode */
 }
 
 .list {
@@ -314,6 +318,10 @@ footer {
     text-align: right;
     padding-right: 10px;
     color: var(--header-background);
+}
+
+body.dark-mode .skill-name {
+    color: #FFFFFF; /* White color for skill names in dark mode */
 }
 
 .skill-bar-container {
