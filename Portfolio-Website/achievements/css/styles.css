@@ -218,8 +218,13 @@ footer {
     margin: 20px;
     padding: 20px;
     width: 300px;
-    transition: background-color 0.3s, color 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
     text-align: center;
+}
+
+.project-card:hover, .project-card:active {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .project-card img {
@@ -250,4 +255,17 @@ footer {
 
 .project-card a:hover {
     background-color: var(--btn-background-hover);
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+    .project-card {
+        width: calc(100% - 40px); /* Full width minus margin */
+        margin: 10px auto; /* Centered margin */
+    }
+
+    .project-card:active {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
 }
