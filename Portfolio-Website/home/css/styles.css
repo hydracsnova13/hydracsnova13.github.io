@@ -10,7 +10,7 @@
 body.dark-mode {
     --background-color: #263238; /* Dark blue-gray background */
     --text-color: #CFD8DC; /* Light gray text */
-    --header-background: #1E88E5; /* Blue header */
+    --header-background: #1b5c95; /* Blue header */
     --header-text-color: #FFFFFF; /* White text for header */
     --btn-background: #00ACC1; /* Light blue button */
     --btn-text-color: #FFFFFF; /* White text for button */
