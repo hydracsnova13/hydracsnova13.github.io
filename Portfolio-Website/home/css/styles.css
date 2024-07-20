@@ -1,19 +1,19 @@
 :root {
-    --background-color: #f0f0f0; /* Light background */
-    --text-color: #333333; /* Dark text */
-    --header-background: #0085FF; /* Blue header */
-    --header-text-color: #ffffff; /* White text for header */
-    --btn-background: #17CB49; /* Green button */
-    --btn-text-color: #ffffff; /* White text for button */
+    --background-color: #FFF3E0; /* Light beige background */
+    --text-color: #333333; /* Dark gray text */
+    --header-background: #FF6F61; /* Soft pink header */
+    --header-text-color: #FFFFFF; /* White text for header */
+    --btn-background: #4DB6AC; /* Teal button */
+    --btn-text-color: #FFFFFF; /* White text for button */
 }
 
 body.dark-mode {
-    --background-color: #1a1a1a; /* Almost black background */
-    --text-color: #f0f0f0; /* Light text */
-    --header-background: #00BA34; /* Green header */
-    --header-text-color: #1a1a1a; /* Dark text for header */
-    --btn-background: #FF9F2D; /* Orange button */
-    --btn-text-color: #1a1a1a; /* Dark text for button */
+    --background-color: #263238; /* Dark blue-gray background */
+    --text-color: #CFD8DC; /* Light gray text */
+    --header-background: #1E88E5; /* Blue header */
+    --header-text-color: #FFFFFF; /* White text for header */
+    --btn-background: #00ACC1; /* Light blue button */
+    --btn-text-color: #FFFFFF; /* White text for button */
 }
 
 body {
@@ -87,6 +87,11 @@ nav {
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .section {
+    background-color: #37474F; /* Dark gray background for sections in dark mode */
+    color: var(--text-color);
 }
 
 #hero-section {
