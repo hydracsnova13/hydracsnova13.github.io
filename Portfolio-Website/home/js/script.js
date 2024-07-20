@@ -100,19 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 skillRow.appendChild(skillName);
                 skillRow.appendChild(skillBarContainer);
                 skillsContainer.appendChild(skillRow);
-
-                // Add event listeners for hover and tap
-                skillRow.addEventListener('mouseover', () => {
-                    skillBar.style.width = `${skill.score}%`;
-                });
-
-                skillRow.addEventListener('touchstart', () => {
-                    skillBar.style.width = `${skill.score}%`;
-                });
-
-                skillRow.addEventListener('click', () => {
-                    skillBar.style.width = `${skill.score}%`;
-                });
             });
 
             // Observer to animate skill bars when they appear in the center of the screen
@@ -127,6 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (entry.isIntersecting) {
                         const skillBar = entry.target.querySelector('.skill-bar');
                         skillBar.style.width = entry.target.style.getPropertyValue('--skill-level');
+                        observer.unobserve(entry.target); // Stop observing once animation is done
                     }
                 });
             };
