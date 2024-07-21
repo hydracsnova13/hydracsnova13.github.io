@@ -3,9 +3,11 @@ function applyTheme(theme) {
     if (theme === 'dark') {
         document.body.classList.add('dark-mode');
         document.getElementById('theme-icon').src = '../icons/moon.svg';
+        document.getElementById('profile-picture').src = '../images/profile-dark.jpg';
     } else {
         document.body.classList.remove('dark-mode');
         document.getElementById('theme-icon').src = '../icons/sun.svg';
+        document.getElementById('profile-picture').src = '../images/profile-light.jpg';
     }
 }
 
@@ -13,11 +15,14 @@ function applyTheme(theme) {
 document.getElementById('toggle-theme').addEventListener('click', () => {
     const isDarkMode = document.body.classList.toggle('dark-mode');
     const themeIcon = document.getElementById('theme-icon');
+    const profilePicture = document.getElementById('profile-picture');
     if (isDarkMode) {
         themeIcon.src = '../icons/moon.svg';
+        profilePicture.src = '../images/profile-dark.jpg';
         localStorage.setItem('theme', 'dark');
     } else {
         themeIcon.src = '../icons/sun.svg';
+        profilePicture.src = '../images/profile-light.jpg';
         localStorage.setItem('theme', 'light');
     }
 });

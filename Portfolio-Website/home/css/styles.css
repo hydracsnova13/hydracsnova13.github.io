@@ -41,7 +41,7 @@ header {
     justify-content: space-between;
     align-items: center;
     transition: background-color 0.3s, color 0.3s;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allow wrapping for responsive design */
 }
 
 #main-nav {
@@ -139,39 +139,34 @@ body.dark-mode .section {
     color: var(--text-color);
 }
 
-.no-theme-change {
-    background-color: black;
-    color: #FFFFFF; /* Ensure white text for readability */
-}
-
 #hero-section {
-    display: flex;
-    flex-direction: row;
-    background: black; /* Black background */
-    color: #FFFFFF; /* Ensure white text */
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.content-left {
-    flex: 1;
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.content-right {
-    flex: 1;
+    position: relative;
+    height: 100vh;
+    background: url('../images/background-light.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px;
+    text-align: left;
 }
 
-#profile-picture {
-    border-radius: 50%;
-    width: 300px;
-    height: 300px;
+body.dark-mode #hero-section {
+    background: url('../images/background-dark.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+#hero-section .content-left {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+body.dark-mode #hero-section .content-left {
+    background: rgba(0, 0, 0, 0.7);
 }
 
 #contact-button {
