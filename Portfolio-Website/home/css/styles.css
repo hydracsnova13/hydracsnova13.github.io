@@ -139,11 +139,16 @@ body.dark-mode .section {
     color: var(--text-color);
 }
 
+.no-theme-change {
+    background-color: black;
+    color: #FFFFFF; /* Ensure white text for readability */
+}
+
 #hero-section {
     display: flex;
     flex-direction: row;
-    background: black;
-    color: var(--text-color);
+    background: black; /* Black background */
+    color: #FFFFFF; /* Ensure white text */
     transition: background-color 0.3s, color 0.3s;
 }
 
