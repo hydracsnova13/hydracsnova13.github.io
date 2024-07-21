@@ -4,10 +4,12 @@ function applyTheme(theme) {
         document.body.classList.add('dark-mode');
         document.getElementById('theme-icon').src = '../icons/moon.svg';
         document.getElementById('profile-picture').src = '../images/profile-dark.jpg';
+        document.getElementById('hero-section').style.backgroundImage = "url('../images/background-dark.jpg')";
     } else {
         document.body.classList.remove('dark-mode');
         document.getElementById('theme-icon').src = '../icons/sun.svg';
         document.getElementById('profile-picture').src = '../images/profile-light.jpg';
+        document.getElementById('hero-section').style.backgroundImage = "url('../images/background-light.jpg')";
     }
 }
 
@@ -19,10 +21,12 @@ document.getElementById('toggle-theme').addEventListener('click', () => {
     if (isDarkMode) {
         themeIcon.src = '../icons/moon.svg';
         profilePicture.src = '../images/profile-dark.jpg';
+        document.getElementById('hero-section').style.backgroundImage = "url('../images/background-dark.jpg')";
         localStorage.setItem('theme', 'dark');
     } else {
         themeIcon.src = '../icons/sun.svg';
         profilePicture.src = '../images/profile-light.jpg';
+        document.getElementById('hero-section').style.backgroundImage = "url('../images/background-light.jpg')";
         localStorage.setItem('theme', 'light');
     }
 });
@@ -164,3 +168,4 @@ document.getElementById('search-input').addEventListener('keypress', (e) => {
         document.getElementById('search-button').click();
     }
 });
+
