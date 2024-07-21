@@ -140,17 +140,33 @@ body.dark-mode .section {
 }
 
 #hero-section {
-    text-align: center;
-    padding: 50px 0;
-    background: var(--header-background);
-    color: var(--header-text-color);
+    display: flex;
+    flex-direction: row;
+    background: black;
+    color: var(--text-color);
     transition: background-color 0.3s, color 0.3s;
+}
+
+.content-left {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
 }
 
 #profile-picture {
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 300px;
+    height: 300px;
 }
 
 #contact-button {
@@ -160,6 +176,7 @@ body.dark-mode .section {
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
+    margin-top: 20px;
 }
 
 .section-title {
@@ -315,8 +332,25 @@ footer {
     .skill-bar-container {
         width: 100%;
     }
+
+    #hero-section {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .content-left, .content-right {
+        width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+
+    #profile-picture {
+        width: 200px;
+        height: 200px;
+    }
 }
 
+/* Styles for skills section */
 .skills-container {
     display: flex;
     flex-wrap: wrap;
