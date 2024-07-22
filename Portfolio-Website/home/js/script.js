@@ -132,29 +132,39 @@ document.addEventListener('DOMContentLoaded', () => {
             const companies = results.data;
             const container = document.getElementById('companies-container');
 
-            // Clone companies to create a continuous loop
-            const cloneCompanies = () => {
-                companies.forEach(company => {
-                    const companyCard = document.createElement('div');
-                    companyCard.className = 'company-card';
-                    companyCard.innerHTML = `
-                        <img src="../images/${company.image}" alt="${company.company_name}">
-                        <p>${company.company_name}</p>
-                        <p>${company.year_from} - ${company.year_to}</p>
-                    `;
-                    container.appendChild(companyCard);
-                });
+            // Function to create and animate company cards
+            const createAndAnimateCompanyCard = (company) => {
+                const companyCard = document.createElement('div');
+                companyCard.className = 'company-card';
+                companyCard.innerHTML = `
+                    <img src="../images/${company.image}" alt="${company.company_name}">
+                    <p>${company.company_name}</p>
+                    <p>${company.year_from} - ${company.year_to}</p>
+                `;
+                container.appendChild(companyCard);
+
+                const animateCard = () => {
+                    companyCard.style.left = `${container.offsetWidth}px`;
+
+                    const moveCard = () => {
+                        const left = parseFloat(companyCard.style.left);
+                        if (left <= -companyCard.offsetWidth) {
+                            container.removeChild(companyCard);
+                            createAndAnimateCompanyCard(company);
+                        } else {
+                            companyCard.style.left = `${left - 1}px`;
+                            requestAnimationFrame(moveCard);
+                        }
+                    };
+
+                    requestAnimationFrame(moveCard);
+                };
+
+                setTimeout(animateCard, Math.random() * 5000); // Stagger the animations
             };
 
-            cloneCompanies();
-            cloneCompanies(); // Double the cards to create smooth loop
-
-            // Reset animation on transition end
-            container.addEventListener('animationiteration', () => {
-                container.appendChild(container.firstElementChild);
-                container.style.animation = 'none';
-                container.offsetHeight; // Trigger reflow
-                container.style.animation = '';
+            companies.forEach(company => {
+                createAndAnimateCompanyCard(company);
             });
         }
     });
