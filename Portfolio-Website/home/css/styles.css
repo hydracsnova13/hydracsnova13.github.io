@@ -378,13 +378,18 @@ footer {
     }
 }
 
-/* Styles for skills section */
+/* Skills section styles */
 .skills-container {
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
     margin-top: 20px;
+}
+
+.skills-column {
+    flex: 1;
+    min-width: 300px;
 }
 
 .skill-row {
@@ -419,6 +424,16 @@ body.dark-mode .skill-name {
     background-color: var(--btn-background);
     transition: width 2s;
     width: 0;
+    position: relative;
+}
+
+.skill-bar span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-weight: bold;
 }
 
 body.dark-mode .skill-bar-container {
@@ -478,104 +493,4 @@ body.dark-mode .company-card {
 
 body.dark-mode .company-card p {
     color: var(--card-text-color);
-}
-
-/* Skill bar animation */
-.skill-bar-container {
-    width: 75%;
-    background-color: #e0e0e0;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    height: 20px;
-}
-
-.skill-bar {
-    height: 100%;
-    background-color: var(--btn-background);
-    transition: width 2s ease-out;
-    width: 0;
-}
-
-body.dark-mode .skill-bar-container {
-    background-color: #555555;
-}
-
-body.dark-mode .skill-bar {
-    background-color: #00acc1;
-}
-
-/* Responsive design for mobile devices */
-@media (max-width: 768px) {
-    .company-card {
-        width: 100px; /* Adjusted width for mobile view */
-        margin: 10px; /* Adjusted margin for mobile view */
-    }
-
-    .companies-container {
-        justify-content: center;
-    }
-}
-
-/* Responsive design for mobile devices */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    #main-nav {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-    }
-
-    #header-controls {
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-        margin-top: 10px;
-    }
-
-    .project-card {
-        width: calc(100% - 40px); /* Full width minus margin */
-        margin: 10px auto; /* Centered margin */
-    }
-
-    .project-card:active {
-        transform: translateY(-10px);
-        box-shadow: 0 0 25px var(--card-neon-light);
-    }
-
-    .skill-row {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .skill-name {
-        width: 100%;
-        text-align: left;
-        padding-bottom: 10px;
-    }
-
-    .skill-bar-container {
-        width: 100%;
-    }
-
-    #hero-section {
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    .content-left, .content-right {
-        width: 100%;
-        padding: 0;
-        text-align: center;
-    }
-
-    #profile-picture {
-        width: 200px;
-        height: 200px;
-    }
 }

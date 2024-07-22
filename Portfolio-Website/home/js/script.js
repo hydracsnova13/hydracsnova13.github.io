@@ -110,9 +110,12 @@ document.addEventListener('DOMContentLoaded', () => {
         header: true,
         complete: function(results) {
             const skillsData = results.data;
-            const skillsContainer = document.getElementById('skills-container');
+            const technicalSkills = skillsData.filter(skill => skill.type === 'technical');
+            const nonTechnicalSkills = skillsData.filter(skill => skill.type === 'non-technical');
+            const technicalSkillsContainer = document.getElementById('technical-skills-container');
+            const nonTechnicalSkillsContainer = document.getElementById('non-technical-skills-container');
 
-            skillsData.forEach(skill => {
+            const createSkillRow = (skill) => {
                 const skillRow = document.createElement('div');
                 skillRow.classList.add('skill-row');
 
@@ -125,23 +128,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const skillBar = document.createElement('div');
                 skillBar.classList.add('skill-bar');
+                skillBar.style.width = `${skill.score}%`;
+                skillBar.innerHTML = `<span>${skill.score}%</span>`;
 
                 skillBarContainer.appendChild(skillBar);
                 skillRow.appendChild(skillName);
                 skillRow.appendChild(skillBarContainer);
-                skillsContainer.appendChild(skillRow);
+                return skillRow;
+            };
 
-                // Animate skill bar width
-                const observer = new IntersectionObserver(entries => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            skillBar.style.width = `${skill.score}%`;
-                            observer.unobserve(skillBar);
-                        }
-                    });
-                }, { threshold: 0.5 });
+            technicalSkills.forEach(skill => {
+                technicalSkillsContainer.appendChild(createSkillRow(skill));
+            });
 
-                observer.observe(skillBar);
+            nonTechnicalSkills.forEach(skill => {
+                nonTechnicalSkillsContainer.appendChild(createSkillRow(skill));
             });
         }
     });
