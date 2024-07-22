@@ -241,11 +241,16 @@ body.dark-mode .section-title {
 }
 
 footer {
-    background-color: var (--header-background);
-    color: var (--header-text-color);
+    background-color: var(--header-background);
+    color: var(--header-text-color);
     text-align: center;
     padding: 10px 0;
     transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode footer {
+    background-color: var(--header-background);
+    color: var(--header-text-color);
 }
 
 #footer-links {
@@ -498,5 +503,4 @@ body.dark-mode .company-card {
 body.dark-mode .company-card p {
     color: var(--card-text-color);
 }
-
 
