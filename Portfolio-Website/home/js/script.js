@@ -8,7 +8,7 @@ function applyTheme(theme) {
     } else {
         document.body.classList.remove('dark-mode');
         document.getElementById('theme-icon').src = '../icons/sun.svg';
-        document.getElementById('profile-picture').src = '../images/profile-light.JPG';
+        document.getElementById('profile-picture').src = '../images/profile-light.jpg';
         document.getElementById('hero-section').style.backgroundImage = "url('../images/background-light.jpg')";
     }
 }
@@ -103,7 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const skillBar = document.createElement('div');
                 skillBar.classList.add('skill-bar');
-                skillBar.style.width = `${skill.score}%`;
 
                 skillBarContainer.appendChild(skillBar);
                 skillRow.appendChild(skillName);
@@ -111,9 +110,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 skillsContainer.appendChild(skillRow);
 
                 // Animate skill bar width
-                setTimeout(() => {
-                    skillBar.style.width = `${skill.score}%`;
-                }, 100);
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            skillBar.style.width = `${skill.score}%`;
+                            observer.unobserve(skillBar);
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                observer.observe(skillBar);
             });
         }
     });
@@ -220,4 +226,3 @@ document.getElementById('search-input').addEventListener('keypress', (e) => {
         document.getElementById('search-button').click();
     }
 });
-
