@@ -128,8 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const skillBar = document.createElement('div');
                 skillBar.classList.add('skill-bar');
-                skillBar.style.width = `${skill.score}%`;
-                skillBar.innerHTML = `<span>${skill.score}%</span>`;
+                skillBar.innerHTML = `<span>0%</span>`;
 
                 skillBarContainer.appendChild(skillBar);
                 skillRow.appendChild(skillName);
@@ -137,12 +136,48 @@ document.addEventListener('DOMContentLoaded', () => {
                 return skillRow;
             };
 
+            const animateSkillBar = (skill, skillBar) => {
+                let width = 0;
+                const increment = skill.score / 100;
+                const interval = setInterval(() => {
+                    width += increment;
+                    if (width >= skill.score) {
+                        width = skill.score;
+                        clearInterval(interval);
+                    }
+                    skillBar.style.width = `${width}%`;
+                    skillBar.querySelector('span').textContent = `${Math.round(width)}%`;
+                }, 20);
+            };
+
             technicalSkills.forEach(skill => {
-                technicalSkillsContainer.appendChild(createSkillRow(skill));
+                const skillRow = createSkillRow(skill);
+                technicalSkillsContainer.appendChild(skillRow);
+                const skillBar = skillRow.querySelector('.skill-bar');
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            animateSkillBar(skill, skillBar);
+                            observer.unobserve(skillBar);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                observer.observe(skillBar);
             });
 
             nonTechnicalSkills.forEach(skill => {
-                nonTechnicalSkillsContainer.appendChild(createSkillRow(skill));
+                const skillRow = createSkillRow(skill);
+                nonTechnicalSkillsContainer.appendChild(skillRow);
+                const skillBar = skillRow.querySelector('.skill-bar');
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            animateSkillBar(skill, skillBar);
+                            observer.unobserve(skillBar);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                observer.observe(skillBar);
             });
         }
     });

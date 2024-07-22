@@ -241,8 +241,8 @@ body.dark-mode .section-title {
 }
 
 footer {
-    background-color: var(--header-background);
-    color: var(--header-text-color);
+    background-color: var (--header-background);
+    color: var (--header-text-color);
     text-align: center;
     padding: 10px 0;
     transition: background-color 0.3s, color 0.3s;
@@ -432,8 +432,12 @@ body.dark-mode .skill-name {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    color: #fff;
+    color: #000; /* Black text for light mode */
     font-weight: bold;
+}
+
+body.dark-mode .skill-bar span {
+    color: #fff; /* White text for dark mode */
 }
 
 body.dark-mode .skill-bar-container {
@@ -494,3 +498,5 @@ body.dark-mode .company-card {
 body.dark-mode .company-card p {
     color: var(--card-text-color);
 }
+
+
