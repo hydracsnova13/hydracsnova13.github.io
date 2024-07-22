@@ -316,7 +316,6 @@ footer {
     background-color: var(--btn-background-hover);
 }
 
-/* Responsive design for mobile devices */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -453,23 +452,54 @@ body.dark-mode #companies-section {
     scroll-behavior: smooth;
     white-space: nowrap;
     cursor: grab;
+    animation: scroll 30s linear infinite;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.companies-container:hover {
+    animation-play-state: paused;
 }
 
 .companies-container::-webkit-scrollbar {
     display: none;
 }
 
-.company {
-    display: inline-block;
+.company-card {
+    background-color: var(--card-background);
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    width: 200px;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
     text-align: center;
-    margin-right: 20px;
+    display: inline-block;
 }
 
-.company img {
-    max-height: 50px;
+body.dark-mode .company-card {
+    background-color: #000000;
+    color: var(--card-text-color);
+}
+
+.company-card:hover, .company-card:active {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px var(--card-neon-light);
+}
+
+.company-card img {
+    max-width: 100%;
     margin-bottom: 10px;
 }
 
-.company p {
+.company-card p {
     margin: 0;
+    color: var(--card-text-color);
+}
+
+body.dark-mode .company-card p {
+    color: var(--card-text-color);
 }

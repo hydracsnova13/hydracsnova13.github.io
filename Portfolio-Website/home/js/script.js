@@ -8,7 +8,7 @@ function applyTheme(theme) {
     } else {
         document.body.classList.remove('dark-mode');
         document.getElementById('theme-icon').src = '../icons/sun.svg';
-        document.getElementById('profile-picture').src = '../images/profile-light.jpg';
+        document.getElementById('profile-picture').src = '../images/profile-light.JPG';
         document.getElementById('hero-section').style.backgroundImage = "url('../images/background-light.jpg')";
     }
 }
@@ -109,6 +109,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 skillRow.appendChild(skillName);
                 skillRow.appendChild(skillBarContainer);
                 skillsContainer.appendChild(skillRow);
+
+                // Animate skill bar width
+                setTimeout(() => {
+                    skillBar.style.width = `${skill.score}%`;
+                }, 100);
             });
         }
     });
@@ -122,14 +127,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const container = document.getElementById('companies-container');
 
             companies.forEach(company => {
-                const companyDiv = document.createElement('div');
-                companyDiv.className = 'company';
-                companyDiv.innerHTML = `
+                const companyCard = document.createElement('div');
+                companyCard.className = 'company-card';
+                companyCard.innerHTML = `
                     <img src="../images/${company.image}" alt="${company.company_name}">
                     <p>${company.company_name}</p>
                     <p>${company.year_from} - ${company.year_to}</p>
                 `;
-                container.appendChild(companyDiv);
+                container.appendChild(companyCard);
             });
 
             // Make the container scrollable by dragging
@@ -160,6 +165,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 const x = e.pageX - container.offsetLeft;
                 const walk = (x - startX) * 3; //scroll-fast
                 container.scrollLeft = scrollLeft - walk;
+            });
+
+            // Touch events for mobile scrolling
+            container.addEventListener('touchstart', (e) => {
+                isDown = true;
+                startX = e.touches[0].pageX - container.offsetLeft;
+                scrollLeft = container.scrollLeft;
+            });
+
+            container.addEventListener('touchmove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.touches[0].pageX - container.offsetLeft;
+                const walk = (x - startX) * 3; //scroll-fast
+                container.scrollLeft = scrollLeft - walk;
+            });
+
+            container.addEventListener('touchend', () => {
+                isDown = false;
             });
         }
     });
@@ -196,3 +220,4 @@ document.getElementById('search-input').addEventListener('keypress', (e) => {
         document.getElementById('search-button').click();
     }
 });
+
