@@ -447,24 +447,18 @@ body.dark-mode #companies-section {
 
 .companies-container {
     display: flex;
-    align-items: center;
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .company-card {
     background-color: var(--card-background);
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    margin: 0 10px;
+    margin: 20px;
     padding: 20px;
     width: 200px;
-    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
     text-align: center;
-    display: inline-block;
-    position: absolute;
-    will-change: transform;
 }
 
 body.dark-mode .company-card {
@@ -517,14 +511,9 @@ body.dark-mode .skill-bar {
         width: 100px; /* Adjusted width for mobile view */
         margin: 10px; /* Adjusted margin for mobile view */
     }
-    
+
     .companies-container {
-        animation: scroll-mobile 30s linear infinite;
-    }
-    
-    @keyframes scroll-mobile {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-100%); }
+        justify-content: center;
     }
 }
 

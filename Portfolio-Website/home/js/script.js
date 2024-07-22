@@ -132,8 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const companies = results.data;
             const container = document.getElementById('companies-container');
 
-            // Function to create and animate company cards
-            const createAndAnimateCompanyCard = (company) => {
+            companies.forEach(company => {
                 const companyCard = document.createElement('div');
                 companyCard.className = 'company-card';
                 companyCard.innerHTML = `
@@ -142,29 +141,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p>${company.year_from} - ${company.year_to}</p>
                 `;
                 container.appendChild(companyCard);
-
-                const animateCard = () => {
-                    companyCard.style.left = `${container.offsetWidth}px`;
-
-                    const moveCard = () => {
-                        const left = parseFloat(companyCard.style.left);
-                        if (left <= -companyCard.offsetWidth) {
-                            container.removeChild(companyCard);
-                            createAndAnimateCompanyCard(company);
-                        } else {
-                            companyCard.style.left = `${left - 1}px`;
-                            requestAnimationFrame(moveCard);
-                        }
-                    };
-
-                    requestAnimationFrame(moveCard);
-                };
-
-                setTimeout(animateCard, Math.random() * 5000); // Stagger the animations
-            };
-
-            companies.forEach(company => {
-                createAndAnimateCompanyCard(company);
             });
         }
     });
