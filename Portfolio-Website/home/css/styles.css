@@ -450,17 +450,13 @@ body.dark-mode #companies-section {
     align-items: center;
     overflow: hidden;
     white-space: nowrap;
-    cursor: grab;
+    position: relative;
     animation: scroll 30s linear infinite;
 }
 
 @keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
-
-.companies-container:hover {
-    animation-play-state: paused;
+    100% { transform: translateX(-50%); }
 }
 
 .company-card {

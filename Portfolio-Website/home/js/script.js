@@ -8,7 +8,7 @@ function applyTheme(theme) {
     } else {
         document.body.classList.remove('dark-mode');
         document.getElementById('theme-icon').src = '../icons/sun.svg';
-        document.getElementById('profile-picture').src = '../images/profile-light.JPG';
+        document.getElementById('profile-picture').src = '../images/profile-light.jpg';
         document.getElementById('hero-section').style.backgroundImage = "url('../images/background-light.jpg')";
     }
 }
@@ -25,7 +25,7 @@ document.getElementById('toggle-theme').addEventListener('click', () => {
         localStorage.setItem('theme', 'dark');
     } else {
         themeIcon.src = '../icons/sun.svg';
-        profilePicture.src = '../images/profile-light.JPG';
+        profilePicture.src = '../images/profile-light.jpg';
         document.getElementById('hero-section').style.backgroundImage = "url('../images/background-light.jpg')";
         localStorage.setItem('theme', 'light');
     }
@@ -148,67 +148,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             cloneCompanies();
             cloneCompanies(); // Double the cards to create smooth loop
-
-            let isDown = false;
-            let startX;
-            let scrollLeft;
-
-            const stopScroll = () => {
-                container.style.animationPlayState = 'paused';
-            };
-
-            const startScroll = () => {
-                container.style.animationPlayState = 'running';
-            };
-
-            container.addEventListener('mousedown', (e) => {
-                isDown = true;
-                container.classList.add('active');
-                startX = e.pageX - container.offsetLeft;
-                scrollLeft = container.scrollLeft;
-                stopScroll();
-            });
-
-            container.addEventListener('mouseleave', () => {
-                isDown = false;
-                container.classList.remove('active');
-                startScroll();
-            });
-
-            container.addEventListener('mouseup', () => {
-                isDown = false;
-                container.classList.remove('active');
-                startScroll();
-            });
-
-            container.addEventListener('mousemove', (e) => {
-                if (!isDown) return;
-                e.preventDefault();
-                const x = e.pageX - container.offsetLeft;
-                const walk = (x - startX) * 3; //scroll-fast
-                container.scrollLeft = scrollLeft - walk;
-            });
-
-            // Touch events for mobile scrolling
-            container.addEventListener('touchstart', (e) => {
-                isDown = true;
-                startX = e.touches[0].pageX - container.offsetLeft;
-                scrollLeft = container.scrollLeft;
-                stopScroll();
-            });
-
-            container.addEventListener('touchmove', (e) => {
-                if (!isDown) return;
-                e.preventDefault();
-                const x = e.touches[0].pageX - container.offsetLeft;
-                const walk = (x - startX) * 3; //scroll-fast
-                container.scrollLeft = scrollLeft - walk;
-            });
-
-            container.addEventListener('touchend', () => {
-                isDown = false;
-                startScroll();
-            });
 
             // Reset animation on transition end
             container.addEventListener('animationiteration', () => {
