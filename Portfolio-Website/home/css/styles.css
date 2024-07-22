@@ -429,3 +429,47 @@ body.dark-mode .skill-bar-container {
 body.dark-mode .skill-bar {
     background-color: #00acc1;
 }
+
+/* Styles for companies section */
+#companies-section {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+body.dark-mode #companies-section {
+    background-color: #37474F; /* Dark gray background for sections in dark mode */
+    color: var(--text-color);
+}
+
+.companies-container {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    cursor: grab;
+}
+
+.companies-container::-webkit-scrollbar {
+    display: none;
+}
+
+.company {
+    display: inline-block;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.company img {
+    max-height: 50px;
+    margin-bottom: 10px;
+}
+
+.company p {
+    margin: 0;
+}

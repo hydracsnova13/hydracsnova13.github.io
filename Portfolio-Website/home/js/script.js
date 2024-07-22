@@ -93,7 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
             skillsData.forEach(skill => {
                 const skillRow = document.createElement('div');
                 skillRow.classList.add('skill-row');
-                skillRow.style.setProperty('--skill-level', `${skill.score}%`);
 
                 const skillName = document.createElement('div');
                 skillName.classList.add('skill-name');
@@ -104,34 +103,63 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const skillBar = document.createElement('div');
                 skillBar.classList.add('skill-bar');
+                skillBar.style.width = `${skill.score}%`;
 
                 skillBarContainer.appendChild(skillBar);
                 skillRow.appendChild(skillName);
                 skillRow.appendChild(skillBarContainer);
                 skillsContainer.appendChild(skillRow);
             });
+        }
+    });
 
-            // Observer to animate skill bars when they appear in the center of the screen
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.5
-            };
+    // Fetch and parse the CSV file for companies
+    Papa.parse('../data/companies.csv', {
+        download: true,
+        header: true,
+        complete: function(results) {
+            const companies = results.data;
+            const container = document.getElementById('companies-container');
 
-            const observerCallback = (entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const skillBar = entry.target.querySelector('.skill-bar');
-                        skillBar.style.width = entry.target.style.getPropertyValue('--skill-level');
-                        observer.unobserve(entry.target); // Stop observing once animation is done
-                    }
-                });
-            };
+            companies.forEach(company => {
+                const companyDiv = document.createElement('div');
+                companyDiv.className = 'company';
+                companyDiv.innerHTML = `
+                    <img src="../images/${company.image}" alt="${company.company_name}">
+                    <p>${company.company_name}</p>
+                    <p>${company.year_from} - ${company.year_to}</p>
+                `;
+                container.appendChild(companyDiv);
+            });
 
-            const observer = new IntersectionObserver(observerCallback, observerOptions);
+            // Make the container scrollable by dragging
+            let isDown = false;
+            let startX;
+            let scrollLeft;
 
-            document.querySelectorAll('.skill-row').forEach(skillRow => {
-                observer.observe(skillRow);
+            container.addEventListener('mousedown', (e) => {
+                isDown = true;
+                container.classList.add('active');
+                startX = e.pageX - container.offsetLeft;
+                scrollLeft = container.scrollLeft;
+            });
+
+            container.addEventListener('mouseleave', () => {
+                isDown = false;
+                container.classList.remove('active');
+            });
+
+            container.addEventListener('mouseup', () => {
+                isDown = false;
+                container.classList.remove('active');
+            });
+
+            container.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - container.offsetLeft;
+                const walk = (x - startX) * 3; //scroll-fast
+                container.scrollLeft = scrollLeft - walk;
             });
         }
     });
@@ -168,4 +196,3 @@ document.getElementById('search-input').addEventListener('keypress', (e) => {
         document.getElementById('search-button').click();
     }
 });
-
