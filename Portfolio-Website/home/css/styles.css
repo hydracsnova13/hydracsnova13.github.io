@@ -504,3 +504,74 @@ body.dark-mode .company-card p {
     color: var(--card-text-color);
 }
 
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: var(--background-color);
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    animation: modalopen 0.5s; /* Add animation */
+}
+
+body.dark-mode .modal-content {
+    background-color: #37474F;
+    color: var(--text-color);
+}
+
+.modal-content img {
+    width: 150px;
+    height: 150px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.modal-content p,
+.modal-content ul {
+    margin-bottom: 20px;
+}
+
+.close {
+    color: var(--text-color);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Add animation (fade in the modal) */
+@keyframes modalopen {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Blur background */
+.blur {
+    filter: blur(5px);
+}

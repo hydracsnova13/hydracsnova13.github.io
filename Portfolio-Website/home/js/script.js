@@ -198,41 +198,78 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p>${company.company_name}</p>
                     <p>${company.year_from} - ${company.year_to}</p>
                 `;
+                companyCard.addEventListener('click', () => {
+                    openModal(company);
+                });
                 container.appendChild(companyCard);
             });
         }
     });
-});
 
-// Toggle search input visibility
-document.getElementById('search-icon').addEventListener('click', () => {
-    const searchInput = document.getElementById('search-input');
-    const searchButton = document.getElementById('search-button');
-    searchInput.classList.toggle('visible');
-    searchButton.classList.toggle('visible');
-    if (searchInput.classList.contains('visible')) {
-        searchInput.focus();
-    }
-});
-
-// Function to handle search and navigate to section
-document.getElementById('search-button').addEventListener('click', () => {
-    const query = document.getElementById('search-input').value.toLowerCase();
-    const sections = document.querySelectorAll('.section');
-    sections.forEach(section => {
-        const textContent = section.textContent.toLowerCase();
-        if (textContent.includes(query)) {
-            section.scrollIntoView({ behavior: 'smooth' });
+    // Toggle search input visibility
+    document.getElementById('search-icon').addEventListener('click', () => {
+        const searchInput = document.getElementById('search-input');
+        const searchButton = document.getElementById('search-button');
+        searchInput.classList.toggle('visible');
+        searchButton.classList.toggle('visible');
+        if (searchInput.classList.contains('visible')) {
+            searchInput.focus();
         }
     });
-    document.getElementById('search-input').classList.remove('visible');
-    document.getElementById('search-button').classList.remove('visible');
-});
 
-// Also trigger search on pressing Enter key
-document.getElementById('search-input').addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-        document.getElementById('search-button').click();
+    // Function to handle search and navigate to section
+    document.getElementById('search-button').addEventListener('click', () => {
+        const query = document.getElementById('search-input').value.toLowerCase();
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(section => {
+            const textContent = section.textContent.toLowerCase();
+            if (textContent.includes(query)) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+        document.getElementById('search-input').classList.remove('visible');
+        document.getElementById('search-button').classList.remove('visible');
+    });
+
+    // Also trigger search on pressing Enter key
+    document.getElementById('search-input').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            document.getElementById('search-button').click();
+        }
+    });
+
+    // Function to open modal with company details
+    function openModal(company) {
+        const modal = document.getElementById('companyModal');
+        document.getElementById('modal-company-image').src = `../images/${company.image}`;
+        document.getElementById('modal-company-name').textContent = company.company_name;
+        const descriptionList = document.getElementById('modal-company-description');
+        descriptionList.innerHTML = '';
+        company.description.split(';').forEach(point => {
+            const listItem = document.createElement('li');
+            listItem.textContent = point;
+            descriptionList.appendChild(listItem);
+        });
+        document.getElementById('modal-company-link').href = company.link;
+        modal.style.display = 'block';
+        document.body.classList.add('blur');
+    }
+
+    // Close modal when clicking on the close button or outside the modal
+    document.querySelector('.close').addEventListener('click', () => {
+        closeModal();
+    });
+    window.addEventListener('click', (event) => {
+        const modal = document.getElementById('companyModal');
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+
+    function closeModal() {
+        const modal = document.getElementById('companyModal');
+        modal.style.display = 'none';
+        document.body.classList.remove('blur');
     }
 });
 
