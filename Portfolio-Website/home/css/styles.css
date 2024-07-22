@@ -456,7 +456,7 @@ body.dark-mode #companies-section {
 
 @keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    100% { transform: translateX(-100%); }
 }
 
 .companies-container:hover {
@@ -524,6 +524,7 @@ body.dark-mode .skill-bar {
     background-color: #00acc1;
 }
 
+/* Responsive design for mobile devices */
 @media (max-width: 768px) {
     .company-card {
         width: 100px; /* Adjusted width for mobile view */

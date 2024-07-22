@@ -8,7 +8,7 @@ function applyTheme(theme) {
     } else {
         document.body.classList.remove('dark-mode');
         document.getElementById('theme-icon').src = '../icons/sun.svg';
-        document.getElementById('profile-picture').src = '../images/profile-light.jpg';
+        document.getElementById('profile-picture').src = '../images/profile-light.JPG';
         document.getElementById('hero-section').style.backgroundImage = "url('../images/background-light.jpg')";
     }
 }
@@ -25,7 +25,7 @@ document.getElementById('toggle-theme').addEventListener('click', () => {
         localStorage.setItem('theme', 'dark');
     } else {
         themeIcon.src = '../icons/sun.svg';
-        profilePicture.src = '../images/profile-light.jpg';
+        profilePicture.src = '../images/profile-light.JPG';
         document.getElementById('hero-section').style.backgroundImage = "url('../images/background-light.jpg')";
         localStorage.setItem('theme', 'light');
     }
@@ -132,37 +132,53 @@ document.addEventListener('DOMContentLoaded', () => {
             const companies = results.data;
             const container = document.getElementById('companies-container');
 
-            companies.forEach(company => {
-                const companyCard = document.createElement('div');
-                companyCard.className = 'company-card';
-                companyCard.innerHTML = `
-                    <img src="../images/${company.image}" alt="${company.company_name}">
-                    <p>${company.company_name}</p>
-                    <p>${company.year_from} - ${company.year_to}</p>
-                `;
-                container.appendChild(companyCard);
-            });
+            // Clone companies to create a continuous loop
+            const cloneCompanies = () => {
+                companies.forEach(company => {
+                    const companyCard = document.createElement('div');
+                    companyCard.className = 'company-card';
+                    companyCard.innerHTML = `
+                        <img src="../images/${company.image}" alt="${company.company_name}">
+                        <p>${company.company_name}</p>
+                        <p>${company.year_from} - ${company.year_to}</p>
+                    `;
+                    container.appendChild(companyCard);
+                });
+            };
 
-            // Make the container scrollable by dragging
+            cloneCompanies();
+            cloneCompanies(); // Double the cards to create smooth loop
+
             let isDown = false;
             let startX;
             let scrollLeft;
+
+            const stopScroll = () => {
+                container.style.animationPlayState = 'paused';
+            };
+
+            const startScroll = () => {
+                container.style.animationPlayState = 'running';
+            };
 
             container.addEventListener('mousedown', (e) => {
                 isDown = true;
                 container.classList.add('active');
                 startX = e.pageX - container.offsetLeft;
                 scrollLeft = container.scrollLeft;
+                stopScroll();
             });
 
             container.addEventListener('mouseleave', () => {
                 isDown = false;
                 container.classList.remove('active');
+                startScroll();
             });
 
             container.addEventListener('mouseup', () => {
                 isDown = false;
                 container.classList.remove('active');
+                startScroll();
             });
 
             container.addEventListener('mousemove', (e) => {
@@ -178,6 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 isDown = true;
                 startX = e.touches[0].pageX - container.offsetLeft;
                 scrollLeft = container.scrollLeft;
+                stopScroll();
             });
 
             container.addEventListener('touchmove', (e) => {
@@ -190,6 +207,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             container.addEventListener('touchend', () => {
                 isDown = false;
+                startScroll();
+            });
+
+            // Reset animation on transition end
+            container.addEventListener('animationiteration', () => {
+                container.appendChild(container.firstElementChild);
+                container.style.animation = 'none';
+                container.offsetHeight; // Trigger reflow
+                container.style.animation = '';
             });
         }
     });
