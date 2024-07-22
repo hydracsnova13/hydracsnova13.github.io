@@ -3,29 +3,51 @@ function applyTheme(theme) {
     if (theme === 'dark') {
         document.body.classList.add('dark-mode');
         document.getElementById('theme-icon').src = '../icons/moon.svg';
-        document.getElementById('profile-picture').src = '../images/profile-dark.jpg';
+        setProfilePicture('profile-dark');
         document.getElementById('hero-section').style.backgroundImage = "url('../images/background-dark.jpg')";
     } else {
         document.body.classList.remove('dark-mode');
         document.getElementById('theme-icon').src = '../icons/sun.svg';
-        document.getElementById('profile-picture').src = '../images/profile-light.jpg';
+        setProfilePicture('profile-light');
         document.getElementById('hero-section').style.backgroundImage = "url('../images/background-light.jpg')";
     }
+}
+
+// Helper function to set profile picture with case-insensitive file extension check
+function setProfilePicture(baseFileName) {
+    const img = document.getElementById('profile-picture');
+    const extensions = ['jpg', 'JPG', 'jpeg', 'JPEG', 'png', 'PNG'];
+    let found = false;
+
+    extensions.forEach(ext => {
+        if (!found) {
+            const imgSrc = `../images/${baseFileName}.${ext}`;
+            fetch(imgSrc)
+                .then(response => {
+                    if (response.ok) {
+                        img.src = imgSrc;
+                        found = true;
+                    }
+                })
+                .catch(error => {
+                    console.log('Image not found:', imgSrc);
+                });
+        }
+    });
 }
 
 // Event listener for theme toggle button
 document.getElementById('toggle-theme').addEventListener('click', () => {
     const isDarkMode = document.body.classList.toggle('dark-mode');
     const themeIcon = document.getElementById('theme-icon');
-    const profilePicture = document.getElementById('profile-picture');
     if (isDarkMode) {
         themeIcon.src = '../icons/moon.svg';
-        profilePicture.src = '../images/profile-dark.jpg';
+        setProfilePicture('profile-dark');
         document.getElementById('hero-section').style.backgroundImage = "url('../images/background-dark.jpg')";
         localStorage.setItem('theme', 'dark');
     } else {
         themeIcon.src = '../icons/sun.svg';
-        profilePicture.src = '../images/profile-light.jpg';
+        setProfilePicture('profile-light');
         document.getElementById('hero-section').style.backgroundImage = "url('../images/background-light.jpg')";
         localStorage.setItem('theme', 'light');
     }
