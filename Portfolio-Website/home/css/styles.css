@@ -530,7 +530,7 @@ body.dark-mode dialog {
 
 .modal-content img {
     width: 150px;
-    height: 150px;
+    height: auto; /* Maintain aspect ratio */
     margin-right: 20px;
     border-radius: 5px;
 }
@@ -561,5 +561,6 @@ body.dark-mode dialog {
 .blur {
     filter: blur(5px);
 }
+
 
 
