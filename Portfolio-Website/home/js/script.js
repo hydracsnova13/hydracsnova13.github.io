@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const companyCard = document.createElement('div');
                 companyCard.className = 'company-card';
                 companyCard.innerHTML = `
-                                        <img src="../images/${company.image}" alt="${company.company_name}">
+                    <img src="../images/${company.image}" alt="${company.company_name}">
                     <p>${company.company_name}</p>
                     <p>${company.year_from} - ${company.year_to}</p>
                 `;
@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
             descriptionList.appendChild(listItem);
         });
         document.getElementById('modal-company-link').href = company.link;
-        modal.style.display = 'block';
+        modal.showModal();
         document.body.classList.add('blur');
     }
 
@@ -259,6 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.close').addEventListener('click', () => {
         closeModal();
     });
+
     window.addEventListener('click', (event) => {
         const modal = document.getElementById('companyModal');
         if (event.target === modal) {
@@ -268,8 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function closeModal() {
         const modal = document.getElementById('companyModal');
-        modal.style.display = 'none';
+        modal.close();
         document.body.classList.remove('blur');
     }
 });
-
