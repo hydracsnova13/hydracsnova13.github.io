@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
             descriptionList.appendChild(listItem);
         });
         document.getElementById('modal-company-link').href = company.link;
-        modal.showModal();
+        modal.style.display = "block";
         document.body.classList.add('blur');
     }
 
@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function closeModal() {
         const modal = document.getElementById('companyModal');
-        modal.close();
+        modal.style.display = "none";
         document.body.classList.remove('blur');
     }
 });
@@ -278,4 +278,3 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme') || 'light';
     applyTheme(savedTheme);
 });
-

@@ -505,25 +505,34 @@ body.dark-mode .company-card p {
 }
 
 /* Modal styles */
-dialog {
+.modal {
+    display: none; /* Hidden by default */
     position: fixed;
     z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+}
+
+.modal-content {
+    position: absolute;
+    background-color: var(--background-color);
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
     width: 80%;
     max-width: 600px;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
-    background-color: var(--background-color);
-    padding: 20px;
-    box-sizing: border-box;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
 }
 
-body.dark-mode dialog {
+body.dark-mode .modal-content {
     background-color: #37474F;
     color: var(--text-color);
 }
@@ -550,16 +559,13 @@ body.dark-mode dialog {
     font-weight: bold;
     cursor: pointer;
     margin-left: auto;
+    display: block;
 }
 
 .close:hover,
 .close:focus {
     color: #000;
     text-decoration: none;
-}
-
-.blur {
-    filter: blur(5px);
 }
 
 
