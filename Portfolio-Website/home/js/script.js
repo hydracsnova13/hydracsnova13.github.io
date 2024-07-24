@@ -1,59 +1,3 @@
-// Function to apply the theme based on localStorage value
-function applyTheme(theme) {
-    if (theme === 'dark') {
-        document.body.classList.add('dark-mode');
-        document.getElementById('theme-icon').src = '../icons/moon.svg';
-        setProfilePicture('profile-dark');
-        document.getElementById('hero-section').style.backgroundImage = "url('../images/background-dark.jpg')";
-    } else {
-        document.body.classList.remove('dark-mode');
-        document.getElementById('theme-icon').src = '../icons/sun.svg';
-        setProfilePicture('profile-light');
-        document.getElementById('hero-section').style.backgroundImage = "url('../images/background-light.jpg')";
-    }
-}
-
-// Helper function to set profile picture with case-insensitive file extension check
-function setProfilePicture(baseFileName) {
-    const img = document.getElementById('profile-picture');
-    const extensions = ['jpg', 'JPG', 'jpeg', 'JPEG', 'png', 'PNG'];
-    let found = false;
-
-    extensions.forEach(ext => {
-        if (!found) {
-            const imgSrc = `../images/${baseFileName}.${ext}`;
-            fetch(imgSrc)
-                .then(response => {
-                    if (response.ok) {
-                        img.src = imgSrc;
-                        found = true;
-                    }
-                })
-                .catch(error => {
-                    console.log('Image not found:', imgSrc);
-                });
-        }
-    });
-}
-
-// Event listener for theme toggle button
-document.getElementById('toggle-theme').addEventListener('click', () => {
-    const isDarkMode = document.body.classList.toggle('dark-mode');
-    const themeIcon = document.getElementById('theme-icon');
-    if (isDarkMode) {
-        themeIcon.src = '../icons/moon.svg';
-        setProfilePicture('profile-dark');
-        document.getElementById('hero-section').style.backgroundImage = "url('../images/background-dark.jpg')";
-        localStorage.setItem('theme', 'dark');
-    } else {
-        themeIcon.src = '../icons/sun.svg';
-        setProfilePicture('profile-light');
-        document.getElementById('hero-section').style.backgroundImage = "url('../images/background-light.jpg')";
-        localStorage.setItem('theme', 'light');
-    }
-});
-
-// Apply the theme on page load based on localStorage value
 document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme') || 'light';
     applyTheme(savedTheme);
@@ -272,5 +216,66 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.close();
         document.body.classList.remove('blur');
     }
+});
+
+// Function to apply the theme based on localStorage value
+function applyTheme(theme) {
+    if (theme === 'dark') {
+        document.body.classList.add('dark-mode');
+        document.getElementById('theme-icon').src = '../icons/moon.svg';
+        setProfilePicture('profile-dark');
+        document.getElementById('hero-section').style.backgroundImage = "url('../images/background-dark.jpg')";
+    } else {
+        document.body.classList.remove('dark-mode');
+        document.getElementById('theme-icon').src = '../icons/sun.svg';
+        setProfilePicture('profile-light');
+        document.getElementById('hero-section').style.backgroundImage = "url('../images/background-light.jpg')";
+    }
+}
+
+// Helper function to set profile picture with case-insensitive file extension check
+function setProfilePicture(baseFileName) {
+    const img = document.getElementById('profile-picture');
+    const extensions = ['jpg', 'JPG', 'jpeg', 'JPEG', 'png', 'PNG'];
+    let found = false;
+
+    extensions.forEach(ext => {
+        if (!found) {
+            const imgSrc = `../images/${baseFileName}.${ext}`;
+            fetch(imgSrc)
+                .then(response => {
+                    if (response.ok) {
+                        img.src = imgSrc;
+                        found = true;
+                    }
+                })
+                .catch(error => {
+                    console.log('Image not found:', imgSrc);
+                });
+        }
+    });
+}
+
+// Event listener for theme toggle button
+document.getElementById('toggle-theme').addEventListener('click', () => {
+    const isDarkMode = document.body.classList.toggle('dark-mode');
+    const themeIcon = document.getElementById('theme-icon');
+    if (isDarkMode) {
+        themeIcon.src = '../icons/moon.svg';
+        setProfilePicture('profile-dark');
+        document.getElementById('hero-section').style.backgroundImage = "url('../images/background-dark.jpg')";
+        localStorage.setItem('theme', 'dark');
+    } else {
+        themeIcon.src = '../icons/sun.svg';
+        setProfilePicture('profile-light');
+        document.getElementById('hero-section').style.backgroundImage = "url('../images/background-light.jpg')";
+        localStorage.setItem('theme', 'light');
+    }
+});
+
+// Apply the theme on page load based on localStorage value
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    applyTheme(savedTheme);
 });
 
