@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interactive Globe</title>
+  <title>Interactive Globe with Light Beams</title>
   <style>
     body { margin: 0; overflow: hidden; }
     canvas { display: block; }
@@ -11,48 +11,151 @@
 </head>
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-  <script src="https://unpkg.com/three-globe"></script>
   <script>
-    // Initialize the scene
+    // Set up the scene, camera, and renderer
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.set(0, 0, 5); // Move camera further back
+    camera.position.z = 2.5;
 
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(0x000000, 1); // Black background
     document.body.appendChild(renderer.domElement);
 
-    // Add a globe
-    const Globe = new ThreeGlobe()
-      .globeImageUrl('./earth.jpg') // Use your Earth texture
-      .showAtmosphere(true);
-
-    scene.add(Globe);
-
-    // Lighting
-    const ambientLight = new THREE.AmbientLight(0x666666, 1.5); // Softer ambient light
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5); // Reduced intensity
-    directionalLight.position.set(1, 1, 1).normalize();
+    // Add ambient light
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
     scene.add(ambientLight);
-    scene.add(directionalLight);
 
-    // Fetch JSON data and add markers
-    fetch('./locations.json')
-      .then(response => response.json())
-      .then(data => {
-        Globe.pointsData(data).pointAltitude('size');
-      })
-      .catch(error => console.error('Error loading locations.json:', error));
+    // Create a group to hold the globe and beams
+    const globeGroup = new THREE.Group();
+    scene.add(globeGroup);
 
-    // Animation loop
-    const animate = function () {
-      requestAnimationFrame(animate);
-      Globe.rotation.y += 0.001; // Rotate globe slowly
-      renderer.render(scene, camera);
-    };
+    // Rotation variables for mouse interaction
+    let isDragging = false;
+    let previousMousePosition = { x: 0, y: 0 };
+    let targetRotation = { x: 0, y: 0 };
+    let naturalRotation = { x: 0, y: 0.002 }; // Natural globe rotation
 
-    animate();
+    // Separate sensitivity factors for vertical and horizontal movement
+    const horizontalSensitivity = 0.00005; // Lower sensitivity for horizontal rotation
+    const verticalSensitivity = 0.005; // Higher sensitivity for vertical rotation
+
+    // Return to axis smoothing factor (lower = slower return)
+    const smoothingFactor = 0.02;
+
+    // Mouse event listeners
+    document.addEventListener('mousedown', (event) => {
+      isDragging = true;
+      previousMousePosition = { x: event.clientX, y: event.clientY };
+    });
+
+    document.addEventListener('mousemove', (event) => {
+      if (isDragging) {
+        const deltaMove = {
+          x: event.clientX - previousMousePosition.x,
+          y: event.clientY - previousMousePosition.y,
+        };
+
+        targetRotation.x += deltaMove.y * verticalSensitivity;
+        targetRotation.y += deltaMove.x * horizontalSensitivity;
+
+        previousMousePosition = { x: event.clientX, y: event.clientY };
+      }
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
+
+    // Load the earth texture and create the globe
+    const textureLoader = new THREE.TextureLoader();
+    textureLoader.load('./earth.jpg', (texture) => {
+      const sphereGeometry = new THREE.SphereGeometry(1, 64, 64); // Sphere with radius 1
+      const sphereMaterial = new THREE.MeshStandardMaterial({
+        map: texture,
+      });
+      const earth = new THREE.Mesh(sphereGeometry, sphereMaterial);
+      globeGroup.add(earth); // Add the globe to the group
+
+      // Create a basic transparent atmosphere
+      const atmosphereGeometry = new THREE.SphereGeometry(1.1, 64, 64); // Slightly larger than the globe
+      const atmosphereMaterial = new THREE.MeshBasicMaterial({
+        color: 0x00aaff, // Light blue color
+        transparent: true, // Enable transparency
+        opacity: 0.15, // Adjust the overall transparency
+        side: THREE.BackSide, // Render inside-out for proper fading
+      });
+
+      // Create the atmosphere mesh
+      const atmosphere = new THREE.Mesh(atmosphereGeometry, atmosphereMaterial);
+      globeGroup.add(atmosphere); // Add atmosphere to the group
+
+      // Define marker locations
+      const locations = [
+        { lat: 0.0, lng: 0.0, name: "Origin" },
+        // Add more locations as needed
+      ];
+
+      // Helper function to convert lat/lng to 3D position
+      function latLngToVector3(lat, lng, radius) {
+        const phi = (90 - lat) * (Math.PI / 180);
+        const theta = (180 - lng) * (Math.PI / 180);
+        const x = radius * Math.sin(phi) * Math.cos(theta);
+        const y = radius * Math.cos(phi);
+        const z = radius * Math.sin(phi) * Math.sin(theta);
+        return new THREE.Vector3(x, y, z);
+      }
+
+      // Add beams to the globe group
+      const beamGeometry = new THREE.ConeGeometry(0.001, 0.5, 5); // Cone shape for light beam
+      const beamMaterial = new THREE.MeshBasicMaterial({
+        color: 0xf2ffa6, // Yellow light color
+        transparent: true, // Enable transparency
+        opacity: 0.5, // Beam transparency
+        side: THREE.DoubleSide, // Render both sides for visibility
+      });
+
+      locations.forEach((loc) => {
+        const beam = new THREE.Mesh(beamGeometry, beamMaterial);
+
+        // Position the beam at the respective location
+        const position = latLngToVector3(loc.lat, loc.lng, 1.0); // On the globe surface
+        const direction = position.clone().normalize(); // Normalize to point outward
+
+        // Set the position: beam starts on the globe surface
+        beam.position.copy(position);
+
+        // Orient the beam outward from the globe
+        beam.quaternion.setFromUnitVectors(
+          new THREE.Vector3(0, 1, 0), // Default cone orientation (Y-axis)
+          direction
+        );
+
+        // Offset the beam outward slightly so it extends from the surface
+        beam.position.add(direction.multiplyScalar(0.15)); // Adjust scalar for beam length above surface
+
+        globeGroup.add(beam); // Add the beam to the globe group
+      });
+
+      // Animation loop
+      function animate() {
+        requestAnimationFrame(animate);
+
+        // Apply gradual return to natural rotation when not dragging
+        if (!isDragging) {
+          targetRotation.x += (naturalRotation.x - targetRotation.x) * smoothingFactor;
+          targetRotation.y += (naturalRotation.y - targetRotation.y) * smoothingFactor;
+        }
+
+        // Apply the rotation
+        globeGroup.rotation.x = targetRotation.x;
+        globeGroup.rotation.y += targetRotation.y;
+
+        renderer.render(scene, camera);
+      }
+      animate();
+    }, undefined, (error) => {
+      console.error('Error loading texture:', error);
+    });
 
     // Handle window resizing
     window.addEventListener('resize', () => {
