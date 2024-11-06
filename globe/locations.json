@@ -1,7 +1,8 @@
 [
-  { "lat": 37.7749, "lng": -122.4194, "name": "San Francisco", "size": 0.5 },
-  { "lat": 51.5074, "lng": -0.1278, "name": "London", "size": 0.7 },
-  { "lat": -33.8688, "lng": 151.2093, "name": "Sydney", "size": 0.6 },
-  { "lat": 48.8566, "lng": 2.3522, "name": "Paris", "size": 0.6 },
-  { "lat": 35.6895, "lng": 139.6917, "name": "Tokyo", "size": 0.8 }
-]
+    { "lat": 0.0, "lng": 0.0, "name": "Origin" },
+    { "lat": 51.5074, "lng": -0.1278, "name": "London" },
+    { "lat": -33.8688, "lng": 151.2093, "name": "Sydney" },
+    { "lat": 48.8566, "lng": 2.3522, "name": "Paris" },
+    { "lat": 35.6895, "lng": 139.6917, "name": "Tokyo" }
+  ]
+  
