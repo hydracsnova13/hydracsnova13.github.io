@@ -22,7 +22,7 @@
   
     // Add a globe
     const Globe = new ThreeGlobe()
-      .globeImageUrl('earth.jpg') // Your downloaded Earth image.
+      .globeImageUrl('./earth.jpg') // Relative path to your Earth texture image
       .showAtmosphere(true);
   
     scene.add(Globe);
@@ -38,11 +38,12 @@
     scene.add(directionalLight);
   
     // Fetch JSON data and add markers
-    fetch('locations.json')
+    fetch('./locations.json') // Relative path to your locations.json
       .then(response => response.json())
       .then(data => {
-        Globe.pointsData(data).pointAltitude('size');
-      });
+        Globe.pointsData(data).pointAltitude('size'); // Use the "size" key from JSON
+      })
+      .catch(error => console.error('Error loading locations.json:', error));
   
     // Animation loop
     const animate = function () {
@@ -60,6 +61,5 @@
       renderer.setSize(window.innerWidth, window.innerHeight);
     });
   </script>
-  
 </body>
 </html>
