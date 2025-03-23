@@ -1,0 +1,279 @@
+:root {
+    --background-color: #FFF3E0; /* Light beige background */
+    --text-color: #333333; /* Dark gray text */
+    --header-background: #FF6F61; /* Soft pink header */
+    --header-text-color: #FFFFFF; /* White text for header */
+    --btn-background: #4DB6AC; /* Teal button */
+    --btn-text-color: #FFFFFF; /* White text for button */
+    --card-background: #FFF3E0; /* Light beige card background */
+    --card-title-color: #333333; /* Dark gray card title */
+    --card-text-color: #333333; /* Dark gray card text */
+    --card-neon-light: rgba(255, 0, 0, 0.7); /* Reddish neon light for light mode */
+}
+
+body.dark-mode {
+    --background-color: #263238; /* Dark blue-gray background */
+    --text-color: #CFD8DC; /* Light gray text */
+    --header-background: #1b5c95; /* Blue header */
+    --header-text-color: #FFFFFF; /* White text for header */
+    --btn-background: #00ACC1; /* Light blue button */
+    --btn-text-color: #FFFFFF; /* White text for button */
+    --card-background: #000000; /* Black card background */
+    --card-title-color: #FFFFFF; /* White card title */
+    --card-text-color: #B0BEC5; /* Light gray card text */
+    --card-neon-light: rgba(0, 255, 0, 0.7); /* Green neon light for dark mode */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background-color: var(--header-background);
+    color: var(--header-text-color);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
+    flex-wrap: wrap; /* Allow wrapping for responsive design */
+}
+
+#main-nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+#nav-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-link {
+    color: var(--header-text-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#header-controls {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping for responsive design */
+}
+
+#search-input, #search-button {
+    display: none; /* Initially hidden */
+    margin-right: 10px;
+}
+
+#search-input.visible, #search-button.visible {
+    display: inline-block;
+}
+
+#search-input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#search-button {
+    background-color: var(--btn-background);
+    color: var(--btn-text-color);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#search-button:hover {
+    background-color: var(--btn-background-hover);
+}
+
+.toggle-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.toggle-button img {
+    width: 24px;
+    height: 24px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .section {
+    background-color: #37474F; /* Dark gray background for sections in dark mode */
+    color: var(--text-color);
+}
+
+#hero-section {
+    text-align: center;
+    padding: 50px 0;
+    background: var(--header-background);
+    color: var(--header-text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#profile-picture {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+#contact-button {
+    background-color: var(--btn-background);
+    color: var(--btn-text-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--header-background);
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+}
+
+.list-item {
+    margin: 5px 0;
+}
+
+.project {
+    margin-bottom: 20px;
+}
+
+.project-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.project-description {
+    margin: 0;
+}
+
+footer {
+    background-color: var(--header-background);
+    color: var(--header-text-color);
+    text-align: center;
+    padding: 10px 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-link {
+    color: var(--header-text-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#footer-location {
+    margin: 10px 0 0;
+}
+
+/* Styles for project cards */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.project-card {
+    background-color: var(--card-background);
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
+    text-align: center;
+}
+
+.project-card:hover, .project-card:active {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px var(--card-neon-light);
+}
+
+.project-card img {
+    max-width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+
+.project-card h3 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: var(--card-title-color);
+}
+
+.project-card p {
+    margin-bottom: 15px;
+    color: var(--card-text-color);
+}
+
+.project-card a {
+    display: inline-block;
+    background-color: var(--btn-background);
+    color: var(--btn-text-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.project-card a:hover {
+    background-color: var(--btn-background-hover);
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+    .project-card {
+        width: calc(100% - 40px); /* Full width minus margin */
+        margin: 10px auto; /* Centered margin */
+    }
+
+    .project-card:active {
+        transform: translateY(-10px);
+        box-shadow: 0 0 25px var(--card-neon-light);
+    }
+}
