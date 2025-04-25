@@ -1,0 +1,92 @@
+Stock Exchange,Host Country,Associated Countries,News Outlets (with RSS Feeds),Host Color,Associated Color
+New York Stock Exchange (NYSE),United States of America,"United States of America; Puerto Rico","CNN: https://rss.cnn.com/rss/cnn_topstories.rss; The New York Times: https://rss.nytimes.com/services/xml/rss/nyt/World.xml; USA TODAY: https://www.usatoday.com/rss/topstories",#e6194b,#f28e9b
+Nasdaq,United States of America,"United States of America; Puerto Rico","CNN: https://rss.cnn.com/rss/cnn_topstories.rss; The New York Times: https://rss.nytimes.com/services/xml/rss/nyt/World.xml; USA TODAY: https://www.usatoday.com/rss/topstories",#3cb44b,#8fcd90
+Shanghai Stock Exchange,"People's Republic of China","People's Republic of China; Bhutan; Laos; Macau; Mongolia; Myanmar; Nepal","China Daily: https://usa.chinadaily.com.cn/rss/usa.xml; South China Morning Post: https://www.scmp.com/rss/91/feed",#ffe119,#fff7a2
+Tokyo Stock Exchange (Japan Exchange Group),Japan,"Japan; Marshall Islands; Micronesia; Palau","NHK News (English): https://www3.nhk.or.jp/rss/news/cat0.xml; The Japan Times: https://www.japantimes.co.jp/feed/",#4363d8,#a8b8f0
+National Stock Exchange of India (NSE),India,"India; Bangladesh; Maldives; Sri Lanka","The Economic Times: https://economictimes.indiatimes.com/rssfeeds/296589292.cms; The Times of India: https://timesofindia.indiatimes.com/rss.cms",#f58231,#f9c598
+Bombay Stock Exchange (BSE),India,India,"The Economic Times: https://economictimes.indiatimes.com/rssfeeds/296589292.cms; The Times of India: https://timesofindia.indiatimes.com/rss.cms",#911eb4,#c69ed9
+Hong Kong Stock Exchange,Hong Kong,Hong Kong,South China Morning Post: https://www.scmp.com/rss/91/feed,#46f0f0,#b7feff
+Shenzhen Stock Exchange,"People's Republic of China","People's Republic of China","China Daily: https://usa.chinadaily.com.cn/rss/usa.xml; South China Morning Post: https://www.scmp.com/rss/91/feed",#f032e6,#f687f0
+Toronto Stock Exchange (TSX),Canada,Canada,"CBC News: https://www.cbc.ca/cmlink/rss-topstories; The Globe and Mail: https://www.theglobeandmail.com/rss/",#bcf60c,#e1f59b
+London Stock Exchange (LSE),United Kingdom,"United Kingdom; Falkland Islands; Gibraltar","BBC News: https://feeds.bbci.co.uk/news/rss.xml; The Guardian: https://www.theguardian.com/uk/rss",#fabebe,#fdd8c7
+Saudi Stock Exchange (Tadawul),Saudi Arabia,"Saudi Arabia; Bahrain; Qatar; United Arab Emirates; Yemen","Arab News: https://arabnews.com/rss.xml; Saudi Gazette: https://saudigazette.com.sa/rss",#008080,#66bebe
+Taiwan Stock Exchange,Taiwan,Taiwan,Liberty Times: https://news.ltn.com.tw/rss/all.xml,#e6beff,#f3d7ff
+German Stock Exchange (Deutsche Börse),Germany,"Germany; Austria","Der Spiegel: https://www.spiegel.de/international/index.rss; Frankfurter Allgemeine: https://www.faz.net/rss/aktuell/index.rss",#9a6324,#c29b6c
+Tehran Stock Exchange,Iran,"Iran; Iraq; Syria",IFP News: https://ifpnews.com/feed/,#fffac8,#fffee0
+SIX Swiss Exchange,Switzerland,"Switzerland; Liechtenstein",Swiss Info: https://www.swissinfo.ch/eng/rss/,#800000,#bf7f7f
+Australian Securities Exchange (ASX),Australia,"Australia; Kiribati; Nauru; Samoa; Solomon Islands; Tonga; Tuvalu; Vanuatu","ABC News: https://www.abc.net.au/news/feed/; The Sydney Morning Herald: https://www.smh.com.au/rss/feed.xml",#aaffc3,#dfffee
+Korea Exchange,South Korea,"South Korea; North Korea",Yonhap News: https://en.yna.co.kr/rss/,#808000,#bfbf80
+Euronext Paris,France,"France; Andorra; Monaco","Le Monde: https://www.lemonde.fr/rss/une.xml; France 24: https://www.france24.com/en/rss",#ffd8b1,#fff0de
+Euronext Amsterdam,Netherlands,Netherlands,De Volkskrant: https://www.volkskrant.nl/rss.xml,#000075,#7f7fbc
+Euronext Brussels,Belgium,Belgium,De Standaard: https://www.standaard.be/rss,#808080,#bfbfbf
+Euronext Lisbon,Portugal,"Portugal; Cabo Verde; São Tomé and Príncipe",Público: https://www.publico.pt/rss,#ffffff,#ffffff
+Euronext Dublin,Ireland,Ireland,The Irish Times: https://www.irishtimes.com/feed/publication/irishtimes,#000000,#7f7f7f
+Euronext Oslo,Norway,Norway,Aftenposten: https://www.aftenposten.no/rss/,#e6194b,#f28e9b
+Nasdaq Stockholm,Sweden,Sweden,Svenska Dagbladet: https://www.svd.se/rss.xml,#3cb44b,#8fcd90
+Nasdaq Helsinki,Finland,Finland,Helsingin Sanomat: https://www.hs.fi/rss/,#ffe119,#fff7a2
+Nasdaq Tallinn,Estonia,Estonia,Delfi (Estonia): https://www.delfi.ee/rss/,#4363d8,#a8b8f0
+Nasdaq Riga,Latvia,Latvia,Delfi (Latvia): https://www.delfi.lv/rss/,#f58231,#f9c598
+Nasdaq Vilnius,Lithuania,Lithuania,Delfi (Lithuania): https://www.delfi.lt/rss/,#911eb4,#c69ed9
+Iceland Stock Exchange,Iceland,Iceland,Iceland Review: https://www.icelandreview.com/feed/,#46f0f0,#b7feff
+Eastern Caribbean Securities Exchange (ECSE),"Saint Kitts and Nevis","Anguilla; Antigua and Barbuda; Dominica; Grenada; Montserrat; Saint Kitts and Nevis; Saint Lucia; Saint Vincent and the Grenadines","Antigua Observer: https://antiguaobserver.com/feed/; St. Lucia News Online: https://www.stlucianewsonline.com/feed/",#f032e6,#f687f0
+Bourse des Valeurs Mobilières de l'Afrique Centrale (BVMAC),Cameroon,"Cameroon; Central African Republic; Chad; Republic of the Congo; Equatorial Guinea; Gabon",Cameroon Tribune: https://www.cameroon-tribune.cm/rss/,#bcf60c,#e1f59b
+Bourse Régionale des Valeurs Mobilières (BVRM),"Côte d'Ivoire","Benin; Burkina Faso; Côte d'Ivoire; Guinea-Bissau; Mali; Niger; Senegal; Togo",Jeune Afrique: https://www.jeuneafrique.com/rss/,#fabebe,#fdd8c7
+Pakistan Stock Exchange,Pakistan,"Pakistan; Afghanistan",Dawn: https://www.dawn.com/feeds/home,#008080,#66bebe
+Mexican Stock Exchange,Mexico,"Mexico; Belize; Guatemala; Honduras",El Universal: https://www.eluniversal.com.mx/rss/,#e6beff,#f3d7ff
+Bursa Malaysia,Malaysia,"Malaysia; Brunei",The Star: https://www.thestar.com.my/rss/,#9a6324,#c29b6c
+Nairobi Securities Exchange,Kenya,"Kenya; Burundi; Rwanda; South Sudan; Uganda",Daily Nation: https://www.nation.co.ke/rss/,#fffac8,#fffee0
+Mauritius Stock Exchange,Mauritius,"Mauritius; Comoros; Madagascar; Seychelles",L’Express (Mauritius): https://www.lexpress.mu/rss/,#800000,#bf7f7f
+Jamaica Stock Exchange,Jamaica,"Jamaica; Barbados; Cuba; Haiti",Jamaica Observer: https://www.jamaicaobserver.com/rss/,#aaffc3,#dfffee
+Johannesburg Stock Exchange,South Africa,"South Africa; Botswana; Democratic Republic of the Congo; Eswatini; Lesotho; Namibia",News24: https://www.news24.com/rss/,#808000,#bfbf80
+Cairo Stock Exchange,Egypt,"Egypt; Eritrea; Libya; Sudan",Al-Ahram: https://english.ahram.org.eg/rss.aspx,#ffd8b1,#fff0de
+Nigerian Stock Exchange,Nigeria,"Nigeria; Gambia; Ghana; Liberia; Sierra Leone",Vanguard: https://www.vanguardngr.com/feed/,#000075,#7f7fbc
+B3 (Brazil),Brazil,"Brazil; Guyana; Suriname; Venezuela",Folha de S.Paulo: https://www1.folha.uol.com.br/rss/ultimas-noticias.xml,#808080,#bfbfbf
+Moscow Exchange,Russia,"Russia; Armenia; Belarus; Georgia; Kazakhstan; Kyrgyzstan; Tajikistan; Turkmenistan; Uzbekistan",TASS: https://tass.com/rss/v2.xml,#BFD641,#E7F1B1
+Indonesia Stock Exchange,Indonesia,"Indonesia; Timor-Leste",The Jakarta Post: https://www.thejakartapost.com/feed/,#000000,#7f7f7f
+Borsa Italiana,Italy,"Italy; San Marino; Vatican City",ANSA: https://www.ansa.it/sito/ansait_rss.xml,#e6194b,#f28e9b
+Stock Exchange of Thailand (SET),Thailand,"Thailand; Cambodia; Laos; Vietnam",Bangkok Post: https://www.bangkokpost.com/rss/,#3cb44b,#8fcd90
+Philippine Stock Exchange,Philippines,Philippines,Philippine Daily Inquirer: https://www.inquirer.net/feed/,#ffe119,#fff7a2
+Singapore Exchange (SGX),Singapore,Singapore,The Straits Times: https://www.straitstimes.com/rss/,#4363d8,#a8b8f0
+Tel Aviv Stock Exchange,Israel,"Israel; Jordan; Lebanon; Palestine",Haaretz: https://www.haaretz.com/rss/,#f58231,#f9c598
+Bolsa de Valores de Colombia,Colombia,"Colombia; Ecuador; Peru",El Tiempo: https://www.eltiempo.com/rss/,#911eb4,#c69ed9
+Buenos Aires Stock Exchange (BCBA),Argentina,"Argentina; Paraguay; Uruguay",La Nación: https://www.lanacion.com.ar/rss/,#46f0f0,#b7feff
+Santiago Stock Exchange,Chile,"Chile; Bolivia",El Mercurio: https://www.emol.com/rss/,#f032e6,#f687f0
+Dhaka Stock Exchange,Bangladesh,Bangladesh,The Daily Star: https://www.thedailystar.net/rss/,#bcf60c,#e1f59b
+Colombo Stock Exchange,Sri Lanka,Sri Lanka,Daily Mirror: https://www.dailymirror.lk/rss/,#fabebe,#fdd8c7
+Hanoi Stock Exchange,Vietnam,Vietnam,VietNamNet: https://vietnamnet.vn/en/rss/,#008080,#66bebe
+Amman Stock Exchange,Jordan,Jordan,Jordan Times: https://www.jordantimes.com/rss/,#e6beff,#f3d7ff
+Kuwait Stock Exchange,Kuwait,Kuwait,Kuwait Times: https://www.kuwaittimes.net/rss/,#9a6324,#c29ed9
+Muscat Securities Market,Oman,Oman,Oman Observer: https://www.omanobserver.om/feed/,#fffac8,#fffee0
+Doha Securities Market,Qatar,Qatar,Gulf Times: https://www.gulf-times.com/rss/,#800000,#bf7f7f
+Abu Dhabi Securities Exchange,United Arab Emirates,United Arab Emirates,The National: https://www.thenationalnews.com/rss/,#aaffc3,#dfffee
+Istanbul Stock Exchange (Borsa Istanbul),Turkey,"Turkey; Azerbaijan",Hürriyet Daily News: https://www.hurriyetdailynews.com/rss/,#808000,#bfbf80
+Warsaw Stock Exchange,Poland,"Poland; Ukraine",Gazeta Wyborcza: https://wyborcza.pl/rss/,#ffd8b1,#fff0de
+Prague Stock Exchange,Czech Republic,"Czech Republic; Slovakia",Prague Daily Monitor: https://www.praguemonitor.com/feed/,#000075,#7f7fbc
+Budapest Stock Exchange,Hungary,Hungary,Hungary Today: https://hungarytoday.hu/feed/,#808080,#bfbfbf
+Bucharest Stock Exchange,Romania,"Romania; Moldova",Romania Insider: https://www.romania-insider.com/feed/,#ffffff,#ffffff
+Belgrade Stock Exchange,Serbia,"Serbia; Bosnia and Herzegovina; Montenegro",B92: https://www.b92.net/rss/,#000000,#7f7f7f
+Zagreb Stock Exchange,Croatia,"Croatia; Slovenia",Jutarnji List: https://www.jutarnji.hr/rss/,#e6194b,#f28e9b
+Sofia Stock Exchange,Bulgaria,Bulgaria,Novinite: https://www.novinite.com/rss/,#3cb44b,#8fcd90
+Athens Stock Exchange,Greece,"Greece; Cyprus",Kathimerini: https://www.ekathimerini.com/rss/,#ffe119,#fff7a2
+Luxembourg Stock Exchange,Luxembourg,Luxembourg,Luxembourg Times: https://www.luxtimes.lu/rss/,#4363d8,#a8b8f0
+Malta Stock Exchange,Malta,Malta,Times of Malta: https://timesofmalta.com/rss/,#f58231,#f9c598
+Casablanca Stock Exchange,Morocco,"Morocco; Mauritania; Western Sahara",Morocco World News: https://www.moroccoworldnews.com/feed/,#911eb4,#c69ed9
+Tunis Stock Exchange,Tunisia,"Tunisia; Algeria",Tunisia News: https://www.tunisianews.tn/feed/,#46f0f0,#b7feff
+Dar es Salaam Stock Exchange,Tanzania,"Tanzania; Malawi; Zambia",The Citizen: https://www.thecitizen.co.tz/rss/,#f032e6,#f687f0
+Lusaka Stock Exchange,Zambia,Zambia,Zambia Daily Mail: https://www.daily-mail.co.zm/feed/,#bcf60c,#e1f59b
+Harare Stock Exchange,Zimbabwe,"Zimbabwe; Mozambique",The Herald: https://www.herald.co.zw/feed/,#fabebe,#fdd8c7
+Kampala Securities Exchange,Uganda,Uganda,New Vision: https://www.newvision.co.ug/rss/,#008080,#66bebe
+Ethiopia Securities Exchange,Ethiopia,"Ethiopia; Djibouti; Somalia",Addis Fortune: https://addisfortune.news/feed/,#e6beff,#f3d7ff
+Astana International Exchange,Kazakhstan,Kazakhstan,The Astana Times: https://astanatimes.com/feed/,#9a6324,#c29ed9
+Ulaanbaatar Stock Exchange,Mongolia,Mongolia,Montsame: https://montsame.mn/en/rss/,#fffac8,#fffee0
+Port Moresby Stock Exchange,Papua New Guinea,"Papua New Guinea; Fiji",Post-Courier: https://www.postcourier.com.pg/feed/,#800000,#bf7f7f
+Almaty Stock Exchange,Kazakhstan,Kazakhstan,The Astana Times: https://astanatimes.com/feed/,#aaffc3,#dfffee
+Tashkent Stock Exchange,Uzbekistan,Uzbekistan,Uzbekistan Daily: https://uzdaily.uz/en/rss/,#808000,#bfbf80
+Kyrgyz Stock Exchange,Kyrgyzstan,Kyrgyzstan,AKIpress: https://akipress.com/rss/,#ffd8b1,#fff0de
+Baku Stock Exchange,Azerbaijan,Azerbaijan,AzerNews: https://www.azernews.az/rss/,#000075,#7f7fbc
+Chittagong Stock Exchange,Bangladesh,Bangladesh,The Daily Star: https://www.thedailystar.net/rss/,#808080,#bfbfbf
+Khartoum Stock Exchange,Sudan,Sudan,Sudan Tribune: https://sudantribune.com/feed/,#ffffff,#ffffff
+Tripoli Stock Exchange,Libya,Libya,Libya Herald: https://www.libyaherald.com/feed/,#000000,#7f7f7f
+Caracas Stock Exchange,Venezuela,Venezuela,El Nacional: https://www.elnacional.com/rss/,#e6194b,#f28e9b
+Nicosia Stock Exchange,Cyprus,Cyprus,Cyprus Mail: https://cyprus-mail.com/feed/,#3cb44b,#8fcd90
+Bolsa de Madrid (BME),Spain,"Spain; Andorra","El País: https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/economia/portada; El Mundo: https://e00-elmundo.uecdn.es/elmundo/rss/espana.xml",#ff1493,#ff8ac9

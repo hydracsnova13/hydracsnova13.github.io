@@ -1,0 +1,78 @@
+/* ─────────────────── base / map ─────────────────── */
+html,body{height:100%;margin:0;font-family:Arial,sans-serif}
+#map{height:100vh;width:100vw}
+
+/* ─────────────────── top-bar ─────────────────────── */
+.top-bar{
+  position:fixed;inset:0 0 auto 0;
+  padding:6px 12px;background:rgba(255,255,255,.80);
+  backdrop-filter:blur(4px);z-index:1000;
+  box-shadow:0 0 6px rgba(0,0,0,.15)
+}
+.avatar{width:32px;height:32px;border-radius:50%;object-fit:cover;margin-right:8px}
+.username{font-weight:600}
+.menu-btn{font-size:26px;background:none;border:none;cursor:pointer}
+.menu-dropdown{display:none;position:absolute;right:0;top:38px;background:#fff;
+  min-width:160px;border:1px solid #ccc;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.menu-dropdown.show{display:block}
+.menu-dropdown li{padding:8px 14px}
+.menu-dropdown li a{color:#333;text-decoration:none}
+.menu-dropdown li:hover{background:#f5f5f5}
+
+/* move Leaflet zoom below bar */
+.leaflet-top.leaflet-left{top:56px!important}
+
+/* ─────────────────── profile overlay ─────────────── */
+.profile-backdrop{
+  position:fixed;inset:0;
+  backdrop-filter:blur(4px);
+  background:rgba(0,0,0,.45);
+  display:flex;align-items:center;justify-content:center;
+  z-index:2000
+}
+.profile-card{
+  width:400px;                     /* ← wider modal */
+  padding:28px;
+  background:#fff;border-radius:10px;
+  text-align:center;position:relative;
+  box-shadow:0 6px 24px rgba(0,0,0,.30)
+}
+.close-btn{
+  position:absolute;top:8px;right:12px;
+  background:none;border:none;font-size:30px;cursor:pointer
+}
+
+/* avatar section */
+.avatar-lg{width:108px;height:108px;border-radius:50%;object-fit:cover}
+.avatar-wrap{position:relative;display:inline-block}
+.icon-btn{
+  width:34px;height:34px;border-radius:50%;
+  border:none;background:#007bff;color:#fff;cursor:pointer;
+  display:flex;align-items:center;justify-content:center
+}
+.icon-btn .material-icons{font-size:20px}
+.avatar-wrap .icon-btn{
+  position:absolute;bottom:-4px;right:-4px      /* camera over avatar */
+}
+
+/* username field row */
+.field-row{
+  margin-top:22px;
+  display:flex;align-items:center;justify-content:center
+}
+.field{
+  flex:1;
+  padding:7px 10px;
+  border:1px solid #ccc;border-radius:4px;
+  font-size:17px
+}
+.field[readonly]{background:#f9f9f9}
+
+/* pencil icon sits inline, NOT absolute */
+.field-row .icon-btn{
+  position:static;               /* override absolute */
+  margin-left:8px;
+}
+
+/* save button */
+#save-profile{margin-top:24px;font-size:16px}

@@ -1,0 +1,27 @@
+<div id="profile-backdrop" class="profile-backdrop">
+    <div class="profile-card">
+      <button id="close-profile" class="close-btn">&times;</button>
+  
+      <div class="avatar-wrap">
+        <img id="prof-avatar" src="{{ user_image }}" class="avatar-lg" alt="avatar">
+        <input type="file" id="file-input" accept="image/*" hidden>
+        <button id="change-photo" class="icon-btn" title="Change photo">
+          <span class="material-icons">photo_camera</span>
+        </button>
+      </div>
+  
+      <div class="field-row">
+        <input id="username-field" class="field" value="{{ username }}" readonly>
+        <button id="edit-username" class="icon-btn" title="Edit username">
+          <span class="material-icons">edit</span>
+        </button>
+      </div>
+  
+      <button id="save-profile" class="btn btn-primary btn-block" disabled>
+        Save changes
+      </button>
+    </div>
+  </div>
+  
+  <script src="{{ url_for('static', filename='js/profile.js') }}"></script>
+  
