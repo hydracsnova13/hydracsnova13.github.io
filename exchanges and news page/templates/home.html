@@ -2,31 +2,34 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Home – Stock News Analytics</title>
+  <title>Stock-News Map</title>
 
+  <!-- vendor css -->
   <link rel="stylesheet"
         href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css">
   <link rel="stylesheet"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- project css -->
   <link rel="stylesheet"
         href="{{ url_for('static', filename='css/style.css') }}">
 
+  <!-- vendor js -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
 </head>
 <body>
 
 <nav class="top-bar d-flex justify-content-between align-items-center">
-
   <div id="open-profile" class="d-flex align-items-center profile" style="cursor:pointer">
     <img src="{{ user_image }}" class="avatar" alt="profile">
     <span class="username">{{ username }}</span>
   </div>
 
   <div class="menu-wrapper position-relative">
-    <button id="menu-toggle" class="menu-btn" aria-label="menu">&#9776;</button>
+    <button id="menu-toggle" class="menu-btn">&#9776;</button>
     <ul id="menu-dropdown" class="menu-dropdown list-unstyled">
       <li id="menu-profile"><a href="javascript:void(0)">Profile</a></li>
       <li><a href="{{ url_for('logout') }}">Logout</a></li>
@@ -36,17 +39,30 @@
 
 <div id="map"></div>
 
+<!-- ────────── news overlay (hidden by default) -->
+<div id="news-overlay" class="news-overlay">
+  <div class="news-container">
+    <aside id="news-left"  class="news-panel"></aside>
+    <!-- map stays visible in the middle -->
+    <div id="close-overlay" class="center-cross">×</div>
+    <aside id="news-right" class="news-panel right"></aside>
+  </div>
+</div>
+
 <script src="{{ url_for('static', filename='js/map.js') }}"></script>
 
 <script>
+  /* dropdown toggle */
   $('#menu-toggle').on('click',()=>$('#menu-dropdown').toggleClass('show'));
   $(document).on('click',e=>{
-      if(!$(e.target).closest('.menu-wrapper').length)
-          $('#menu-dropdown').removeClass('show');
+    if(!$(e.target).closest('.menu-wrapper').length)
+        $('#menu-dropdown').removeClass('show');
   });
+
+  /* profile overlay (unchanged) */
   function showProfile(){
-      if($('#profile-backdrop').length){ $('#profile-backdrop').show(); return; }
-      $.get('/profile', html=>$('body').append(html));
+    if($('#profile-backdrop').length){$('#profile-backdrop').show();return;}
+    $.get('/profile', html=>$('body').append(html));
   }
   $('#open-profile,#menu-profile').on('click',showProfile);
 </script>
